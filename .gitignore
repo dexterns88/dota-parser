@@ -14,3 +14,5 @@ application/logs/*
 application/config/database.php
 
 public/user_guide/*
+
+.idea/*

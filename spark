@@ -1,0 +1,4 @@
+#!/bin/bash
+#clear # clear screen so we can follow what is going on
+
+php tools/spark $*
