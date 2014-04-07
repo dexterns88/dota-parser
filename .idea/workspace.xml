@@ -1,7 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="62078eb7-2ef1-4dad-bfc9-0246e12f9f7d" name="Default" comment="" />
+    <list default="true" id="62078eb7-2ef1-4dad-bfc9-0246e12f9f7d" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\changelog.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\active_record.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\caching.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\call_function.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\configuration.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\connecting.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\examples.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\fields.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\forge.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\helpers.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\queries.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\results.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\table_data.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\transactions.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\database\utilities.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\doc_style\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\doc_style\template.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\alternative_php.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\ancillary_classes.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\autoloader.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\caching.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\cli.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\common_functions.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\controllers.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\core_classes.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\creating_drivers.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\creating_libraries.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\credits.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\drivers.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\environments.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\errors.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\helpers.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\hooks.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\libraries.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\managing_apps.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\models.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\profiling.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\quick_reference.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\requirements.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\reserved_names.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\routing.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\security.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\styleguide.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\urls.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\general\views.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\array_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\captcha_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\cookie_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\date_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\directory_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\download_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\email_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\file_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\form_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\html_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\inflector_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\language_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\number_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\path_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\security_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\smiley_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\string_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\text_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\typography_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\url_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\helpers\xml_helper.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\appflowchart.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\arrow.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\ci_logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\ci_logo_flame.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\ci_quick_ref.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\codeigniter_1.7.1_helper_reference.pdf" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\codeigniter_1.7.1_helper_reference.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\codeigniter_1.7.1_library_reference.pdf" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\codeigniter_1.7.1_library_reference.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\file.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\folder.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\nav_bg_darker.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\nav_separator_darker.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\nav_toggle_darker.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\reactor-bullet.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\smile.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\images\transparent.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\downloads.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\troubleshooting.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_120.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_130.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_131.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_132.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_133.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_140.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_141.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_150.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_152.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_153.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_154.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_160.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_161.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_162.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_163.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_170.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_171.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_172.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_200.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_201.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_202.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_203.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_210.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_211.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_212.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_213.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_214.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrade_b11.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\installation\upgrading.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\benchmark.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\caching.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\calendar.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\cart.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\config.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\email.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\encryption.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\file_uploading.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\form_validation.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\ftp.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\image_lib.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\input.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\javascript.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\language.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\loader.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\migration.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\output.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\pagination.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\parser.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\security.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\sessions.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\table.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\trackback.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\typography.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\unit_testing.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\uri.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\user_agent.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\xmlrpc.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\libraries\zip.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\license.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\nav\hacks.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\nav\moo.fx.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\nav\nav.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\nav\prototype.lite.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\nav\user_guide_menu.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\overview\appflow.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\overview\at_a_glance.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\overview\cheatsheets.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\overview\features.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\overview\getting_started.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\overview\goals.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\overview\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\overview\mvc.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\toc.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\tutorial\conclusion.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\tutorial\create_news_items.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\tutorial\hard_coded_pages.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\tutorial\index.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\tutorial\news_section.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\tutorial\static_pages.html" afterPath="" />
+      <change type="DELETED" beforePath="C:\wamp\www\elitearea_dev\dota\user_guide\userguide.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.php" afterPath="$PROJECT_DIR$/public/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="dota.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +198,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="31" selection-start="215" selection-end="215" vertical-scroll-proportion="0.24528302" vertical-offset="0" max-vertical-offset="901">
+            <state line="15" column="19" selection-start="236" selection-end="236" vertical-scroll-proportion="0.28301886" vertical-offset="0" max-vertical-offset="901">
               <folding />
             </state>
           </provider>
@@ -45,6 +217,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -111,25 +284,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dota" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dota" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -193,9 +348,16 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="46" selection-start="4768" selection-end="4768" vertical-scroll-proportion="-8.54902" vertical-offset="2097" max-vertical-offset="3587">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="31" selection-start="215" selection-end="215" vertical-scroll-proportion="0.24528302" vertical-offset="0" max-vertical-offset="901">
+        <state line="15" column="19" selection-start="236" selection-end="236" vertical-scroll-proportion="0.28301886" vertical-offset="0" max-vertical-offset="901">
           <folding />
         </state>
       </provider>

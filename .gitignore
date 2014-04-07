@@ -12,3 +12,5 @@ application/logs/*
 #custom added
 
 application/config/database.php
+
+public/user_guide/*
