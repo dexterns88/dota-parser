@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+</head>
+<body>
+
+  <div class="page">
+    <header>
+      <a class="logo" href="http://{{ url }}">w3xSilverCloud</a>
+
+      {% if nav %}
+        {{ nav|raw }}
+      {% endif %}
+
+    </header> <!-- header -->
+
+    <div class="region-content">
+
+      {{ message|raw }}
+
+      {{ content|raw }}
+    </div> <!-- region-content -->
+
+  </div> <!-- page -->
+
+  <footer>
+    <p>copyright 2014 by Elitearea.org</p>
+  </footer> <!-- footer -->
+
+
+</body>
+</html>

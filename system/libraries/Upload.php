@@ -612,6 +612,8 @@ class CI_Upload {
 			}
 		}
 
+    $ignore_mime = true;
+
 		if ($ignore_mime === TRUE)
 		{
 			return TRUE;
