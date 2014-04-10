@@ -612,14 +612,13 @@ class CI_Upload {
 			}
 		}
 
-    $ignore_mime = true;
-
 		if ($ignore_mime === TRUE)
 		{
 			return TRUE;
 		}
 
 		$mime = $this->mimes_types($ext);
+
 
 		if (is_array($mime))
 		{
