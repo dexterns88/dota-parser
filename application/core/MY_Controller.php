@@ -12,7 +12,7 @@ class MY_Controller extends CI_Controller {
     $this->load->helper('url');
 
     $this->load->spark('krumo/0.0.1');
-    $this->load->spark('Twig/0.0.1');
+    $this->load->spark('twig/0.0.1');
 
     $this->data['url'] = base_url();
 
