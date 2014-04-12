@@ -1,0 +1,18 @@
+<div class="replay_list">
+
+  {% for list in lists %}
+    <div class="view-item">
+      <p>
+        <span class="title"> {{ list.title }} </span>
+        by:
+        <span class="saver"> {{ list.saver  }}</span>
+      </p>
+      <p>
+        <span class="date"> {{ list.date|date("m/d/Y") }}</span>
+        <span class="time"> {{ list.date|date("H:m") }}</span>
+      </p>
+      <a class="preview" href=/view/save/{{ list.link }}" >View details</a>
+      <a class="download" href="/replay/{{ list.link }}">Download replay</a>
+    </div>
+  {% endfor %}
+</div>

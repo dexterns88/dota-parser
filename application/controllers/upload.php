@@ -3,6 +3,8 @@
 
 class Upload extends MY_Controller {
 
+  var $model_date;
+
   public function index()
   {
     $this->data['content'] = $this->twig->render('upload_form' , $this->data );
@@ -11,14 +13,27 @@ class Upload extends MY_Controller {
 
   public function proced()
   {
+
+    $this->load->model('save_replay');
+
+    $this->load->helper( array( 'file' , 'date' ) );
+    $time = time();
+
     $config['upload_path'] = './replay/';
     $config['allowed_types'] = 'w3g';
     $config['max_size']	= '2000';
+    $config['file_name'] = "reply_" . $time;
 
     $this->load->library('upload', $config);
     $this->load->library('reshine/reshine');
 
-    $this->load->helper('file');
+
+
+    //$datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
+    //$localTime =  gmt_to_local( $time , 'UP1' , true  );
+    //krumo( mdate($datestring, $time) );
+    //krumo(mdate($datestring , $localTime ));
+
 
     $postData = $_POST;
 
@@ -34,9 +49,8 @@ class Upload extends MY_Controller {
     }
     else
     {
-      //krumo($postData);
+
       $uploaded_file = $this->upload->data();
-      //krumo( $uploaded_file );
 
       $this->reshine->replay( $uploaded_file['full_path'] );
 
@@ -56,20 +70,32 @@ class Upload extends MY_Controller {
       $txtFile = $uploaded_file['file_path'] . $uploaded_file['raw_name'] . ".txt";
       $test = write_file( $txtFile , serialize( $this->reshine ) );
 
-      if ( $this->reshine->extra['parsed'] == true ) {
+      $model_date['saver'] = $this->reshine->game['saver_name'];
+      $model_date['title'] = $_POST['replay_title'];
+      $model_date['time'] = $time;
+      $model_date['link'] = $uploaded_file['orig_name'];
 
-        $this->data['message'] = 'Replay uploaded successfully. <a href="view_replay.php?file" > View details </a>';
+      $insertRes = $this->save_replay->insert($model_date);
 
+      if($insertRes == false )
+      {
+        $file_save = $config['upload_path'] . $uploaded_file['file_name'];
+        $file_txt = $config['upload_path'] . $uploaded_file['raw_name'] . ".txt";
+        unlink( $file_save );
+        unlink( $file_txt );
 
-        $this->data['reply'] = $this->reshine;
-
-        $this->data['content'] = $this->twig->render('success_uploaded' , $this->data );
-
-
-        $this->twig->display('main_tpl' , $this->data );
+        $this->data['message'] = "<div class='message error'>error with uploading replay please contact us to report issues</div>";
+        $this->index();
       }
-
-
+      else
+      {
+        if ( $this->reshine->extra['parsed'] == true ) {
+          $this->data['message'] = 'Replay uploaded successfully. <a href="view_replay/" > View details </a>';
+          $this->data['reply'] = $this->reshine;
+          $this->data['content'] = $this->twig->render('success_uploaded' , $this->data );
+          $this->twig->display('main_tpl' , $this->data );
+        }
+      }// if query true
 
     }
 
