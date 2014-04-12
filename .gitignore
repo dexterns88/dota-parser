@@ -17,3 +17,8 @@ public/user_guide/*
 public/replay
 
 .idea/*
+
+
+#server
+.htaccess
+.htpasswd
