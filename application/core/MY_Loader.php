@@ -47,7 +47,9 @@ class MY_Loader extends CI_Loader
     {
         if(!defined('SPARKPATH'))
         {
-            define('SPARKPATH', '../sparks/');
+          $sparkPath = BASEPATH . '../sparks/';
+          //define('SPARKPATH', '/sparks/');
+          define('SPARKPATH', $sparkPath );
         }
 
         $this->_is_lt_210 = (is_callable(array('CI_Loader', 'ci_autoloader'))
