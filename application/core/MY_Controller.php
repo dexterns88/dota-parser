@@ -16,6 +16,9 @@ class MY_Controller extends CI_Controller {
 
     $this->data['url'] = base_url();
 
+    $this->data['styles'] = array (
+      '/stylesheets/albatross_api.css'
+    );
 
     $this->data['nav'] = $this->twig->render('menu');
 
