@@ -1,0 +1,14 @@
+/*
+	require file is config file for include all require item and file;
+*/
+
+// require compass library
+@import "compass/css3";
+
+
+
+// mixin include
+@import "core/mixin/bundle_mixin";
+
+// variables
+@import "core/vars/bundle_vars";

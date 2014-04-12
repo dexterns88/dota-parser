@@ -1,0 +1,18 @@
+/*
+| Table reset api
+*/
+
+table {
+	
+	border-collapse: collapse;
+
+	th,
+	td {
+		padding: 5px 7px;
+	}
+
+	td {
+		vertical-align: top;
+	}
+
+}

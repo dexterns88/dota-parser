@@ -1,0 +1,59 @@
+
+form {
+	
+	border: $minimal_formBorder;
+	padding: $minimal_formPadding;
+	
+	@include border-radius( $minimal_formRadius );
+	@include background-image( $minimal_formBackground );
+	
+	legend {
+		font-size: $minimal_legendSize;
+		font-weight: $minimal_legendFontWeight;
+		border: $minimal_legendBorder;
+		background-color: $minimal_legendBC;
+		@include border-radius( $minimal_legendRadius);
+		@include box-shadow( $minimal_legendShadow );
+	}
+
+	.description {
+		font-size: $minimal_descFontiSize;
+		font-weight: $minimal_descFontWeight;
+		font-style: $minimal_descFontStyle;
+		margin: $minimal_descMargin;
+		border: $minimal_descBorder;
+		background-color: $minimal_descBC;
+		padding: $minimal_descPadding;
+		color: $minimal_descColor;
+	}
+
+	input[type="text"],
+	select {
+		border: $minimal_formItemsBorder;
+	}
+
+	.form-item {
+		
+		margin: 15px 0;
+
+		&.block-inner {
+
+			> label { 
+				display: block;
+				margin-left: 0;
+				margin-right: 0;
+				font-size: $minimal_labelFontSize;
+				margin-top: 0;
+			}
+
+			select,
+			input {
+				width: 100%;
+			}
+
+		}
+
+	}
+
+
+}
