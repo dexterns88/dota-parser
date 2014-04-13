@@ -7,6 +7,8 @@ class View extends MY_Controller {
 
   public function index()
   {
+    $this->data['pagetitle'] = "Replay list";
+
     $this->load->model('save_replay');
 
     $query['lists'] = $this->save_replay->view_all();

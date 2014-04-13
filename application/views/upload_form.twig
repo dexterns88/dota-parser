@@ -1,4 +1,3 @@
-<h1>Upload replay</h1>
 <form enctype="multipart/form-data" action="{{ url }}upload/proced" method="post">
 
   <div class="form-item">
@@ -21,7 +20,7 @@
     <textarea class="form-textarea" name="replay_text" id="replay_text" cols="65"></textarea>
   </div> <!-- form-item -->
 
-  <div class="form-item">
+  <div class="form-item form-file">
     <label for="replay_file" >File<span class="required-astrix">*</span>: </label>
     <input name="replay_file" id="replay_file" type="file" />
     <p class="description">max allowed size is 2MB</p>

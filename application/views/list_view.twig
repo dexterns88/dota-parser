@@ -1,18 +1,26 @@
 <div class="replay_list">
 
+    <div class="view-item">
+      <p class="item-row title-h">Title</p>
+      <p class="item-row saver-h" >Saver</p>
+      <p class="item-row date-h">Upload date</p>
+      <p class="item-row link">
+        Detalis/Download
+      </p>
+    </div>
+
   {% for list in lists %}
     <div class="view-item">
-      <p>
-        <span class="title"> {{ list.title }} </span>
-        by:
-        <span class="saver"> {{ list.saver  }}</span>
+      <p class="item-row title"> {{ list.title }} </p>
+      <p class="item-row saver" > {{ list.saver  }}</p>
+      <p class="item-row date">
+        {{ list.date|date("m/d/Y") }}
+        {{ list.date|date("H:m") }}
       </p>
-      <p>
-        <span class="date"> {{ list.date|date("m/d/Y") }}</span>
-        <span class="time"> {{ list.date|date("H:m") }}</span>
+      <p class="item-row link">
+        <a class="preview" href=/view/save/{{ list.link }}" >Details</a>
+        <a class="download" href="/replay/{{ list.link }}">Download</a>
       </p>
-      <a class="preview" href=/view/save/{{ list.link }}" >View details</a>
-      <a class="download" href="/replay/{{ list.link }}">Download replay</a>
     </div>
   {% endfor %}
 </div>
