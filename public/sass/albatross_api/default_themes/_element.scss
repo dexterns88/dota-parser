@@ -16,6 +16,11 @@
 			@include box-shadow(none);	
 		}
 
+		&.item-head {
+			border-bottom: 1px solid #000;
+			color: #D5D5D5;
+		}
+
 		.item-row {
 			display: inline-block;
 			width: 25%;
@@ -26,7 +31,18 @@
 		p {
 			margin-bottom: 0;
 		}
+	}
 
+	.link {
+		a {
+			margin-right: 20px;
+			
+			i {
+				margin-right: 4px;
+				color: #50D623;
+			}
+
+		}
 	}
 
 }

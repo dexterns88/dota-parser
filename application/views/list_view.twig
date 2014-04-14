@@ -1,6 +1,6 @@
 <div class="replay_list">
 
-    <div class="view-item">
+    <div class="view-item item-head">
       <p class="item-row title-h">Title</p>
       <p class="item-row saver-h" >Saver</p>
       <p class="item-row date-h">Upload date</p>
@@ -18,8 +18,8 @@
         {{ list.date|date("H:m") }}
       </p>
       <p class="item-row link">
-        <a class="preview" href=/view/save/{{ list.link }}" >Details</a>
-        <a class="download" href="/replay/{{ list.link }}">Download</a>
+        <a class="preview" href=/view/save/{{ list.link }}" ><i class="fa fa-list"></i>Details</a>
+        <a class="download" href="/replay/{{ list.link }}"><i class="fa fa-cloud-download"></i>Download</a>
       </p>
     </div>
   {% endfor %}
