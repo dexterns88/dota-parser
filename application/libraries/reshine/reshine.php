@@ -170,6 +170,8 @@ function replay($filename, $parse_actions=true, $parse_chat=true) {
 	unset($this->ability_delay);
 	unset($this->leave_unknown);
 	unset($this->continue_game);
+
+    return $this;
   }
 
     /**

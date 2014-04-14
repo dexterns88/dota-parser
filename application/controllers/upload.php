@@ -50,9 +50,7 @@ class Upload extends MY_Controller {
     }
     else
     {
-
       $uploaded_file = $this->upload->data();
-
       $this->reshine->replay( $uploaded_file['full_path'] );
 
       if( "Automatic" != $postData['replay_winner'] ) {
