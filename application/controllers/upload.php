@@ -53,6 +53,15 @@ class Upload extends MY_Controller {
       $uploaded_file = $this->upload->data();
       $this->reshine->replay( $uploaded_file['full_path'] );
 
+
+      $model_date['saver'] = $this->reshine->game['saver_name'];
+      $model_date['title'] = $_POST['replay_title'];
+      $model_date['time'] = $time;
+      $model_date['link'] = $uploaded_file['orig_name'];
+
+      $this->reshine->extra['title'] = $model_date['title'];
+
+
       if( "Automatic" != $postData['replay_winner'] ) {
         $this->reshine->extra['winner'] = ( $postData['replay_winner'] == "Sentinel" ? "Sentinel" : "Scourge" );
       }
@@ -68,11 +77,6 @@ class Upload extends MY_Controller {
 
       $txtFile = $uploaded_file['file_path'] . $uploaded_file['raw_name'] . ".txt";
       $test = write_file( $txtFile , serialize( $this->reshine ) );
-
-      $model_date['saver'] = $this->reshine->game['saver_name'];
-      $model_date['title'] = $_POST['replay_title'];
-      $model_date['time'] = $time;
-      $model_date['link'] = $uploaded_file['orig_name'];
 
       $insertRes = $this->save_replay->insert($model_date);
 

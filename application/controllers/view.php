@@ -48,8 +48,17 @@ class View extends MY_Controller {
     }
 
     //$version = sprintf('%02d', $replay->header['major_v']);
-    
-    krumo( $replay );
+
+    //krumo( $replay );
+
+    if( isset($replay) ) {
+      $data['replay'] = $replay;
+      $data['file'] = $i;
+      $this->data['content'] = $this->twig->render('save_prev' , $data );
+    }
+    $this->twig->display('main_tpl' , $this->data );
+
+
   }
 
 }
