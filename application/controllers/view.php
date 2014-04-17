@@ -26,9 +26,9 @@ class View extends MY_Controller {
     $replayConf['storageRaw'] = 'replay\\';
     $replayConf['file_full'] = $replayConf['storage'] . $file;
 
-    $this->load->library('reshine/reshine');
-    $this->load->helper('file');
 
+    $this->load->library(array('reshine/reshine' , 'theme_view') );
+    $this->load->helper('file');
 
     if( file_exists( $replayConf['file_full'] . '.txt'  ) )
     {
@@ -52,9 +52,8 @@ class View extends MY_Controller {
     //krumo( $replay );
 
     if( isset($replay) ) {
-      $data['replay'] = $replay;
-      $data['file'] = $i;
-      $this->data['content'] = $this->twig->render('save_prev' , $data );
+      $json_theme['replay'] = $this->theme_view->render( $replay , $i );
+      $this->data['content'] = $this->twig->render('save_prev' , $json_theme );
     }
     $this->twig->display('main_tpl' , $this->data );
 
