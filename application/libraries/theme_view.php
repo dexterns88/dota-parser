@@ -201,25 +201,29 @@ class Theme_view {
         unset($a_level);
         $i_skill = 0;
         $skill_counter = 0;
-        foreach ($p_hero['abilities'] as $time=>$ability) {
-          $i_skill++;
-          if ($i_skill > 25 ) break;
 
-          if(!isset($a_level[$ability->getName()])) {
-            $a_level[$ability->getName()] = 1;
+        if( isset( $p_hero['abilities'] ) )
+        {
+          foreach ( $p_hero['abilities'] as $time=>$ability) {
+            $i_skill++;
+            if ($i_skill > 25 ) break;
+
+            if(!isset($a_level[$ability->getName()])) {
+              $a_level[$ability->getName()] = 1;
+            }
+            else {
+              $a_level[$ability->getName()]++;
+            }
+
+            $this->theme['teams'][$i][$countPlayer]['skills'][$skill_counter]['src'] = $ability->getArt();
+            $this->theme['teams'][$i][$countPlayer]['skills'][$skill_counter]['name'] = $ability->getName();
+            $this->theme['teams'][$i][$countPlayer]['skills'][$skill_counter]['time'] = convert_time($time);
+            $this->theme['teams'][$i][$countPlayer]['skills'][$skill_counter]['level'] = $a_level[$ability->getName()];
+
+            $skill_counter++;
+
           }
-          else {
-            $a_level[$ability->getName()]++;
-          }
-
-          $this->theme['teams'][$i][$countPlayer]['skills'][$skill_counter]['src'] = $ability->getArt();
-          $this->theme['teams'][$i][$countPlayer]['skills'][$skill_counter]['name'] = $ability->getName();
-          $this->theme['teams'][$i][$countPlayer]['skills'][$skill_counter]['time'] = convert_time($time);
-          $this->theme['teams'][$i][$countPlayer]['skills'][$skill_counter]['level'] = $a_level[$ability->getName()];
-
-          $skill_counter++;
-
-        }
+        }//if
 
         // items
 
@@ -270,6 +274,7 @@ class Theme_view {
 
       foreach( $replay->bans as $key=>$hero ) {
         $team = ($hero->extra == 0 ? "sentinel" : "scourge");
+
         $this->theme['bans'][$key]['src'] = $hero->getArt();
         $this->theme['bans'][$key]['name'] = $hero->getName();
         $this->theme['bans'][$key]['team'] = $team;
