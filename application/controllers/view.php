@@ -11,6 +11,8 @@ class View extends MY_Controller {
 
     $this->load->model('save_replay');
 
+    $this->data['title'] = 'Save listing';
+
     $query['lists'] = $this->save_replay->view_all();
 
     $this->data['content'] = $this->twig->render('list_view' , $query );
@@ -21,6 +23,11 @@ class View extends MY_Controller {
 
   public function save($i)
   {
+    $this->data['title'] = "Replay details";
+
+    array_push( $this->data['jsplugin'] , "/script/jquery.mCustomScrollbar.min.js" );
+    array_push( $this->data['jsplugin'] , "/script/jquery.mousewheel.min.js" );
+
     $file = $i;
     $replayConf['storage'] = './replay/';
     $replayConf['storageRaw'] = 'replay\\';

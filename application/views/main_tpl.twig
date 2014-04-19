@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
   <meta charset="UTF-8">
   <title>{{ title }}</title>
+
+  {#<meta name="viewport" content="initial-scale=1">#}
+  <meta name="viewport" content="width=device-width">
 
   {% for style in styles %}
     <link type="text/css" rel="stylesheet" href="{{ style }}" />
@@ -36,8 +39,24 @@
 
   <footer>
     <p>copyright 2014 by Elitearea.org</p>
+
+    {{ memory_usage }} / {{ elapsed_time }}
   </footer> <!-- footer -->
 
+  <div id="script" style="display: none; visibility: hidden;">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script>
+      $('html').removeClass('no-js').addClass('js');
+    </script>
+    {% if jsplugin %}
+      {% for js in jsplugin %}
+        <script type="text/javascript" src="{{ js }}"></script>
+      {% endfor %}
+    {% endif %}
+
+
+    <script type="text/javascript" src="/script/api.js"></script>
+  </div>
 
 </body>
 </html>

@@ -57,11 +57,15 @@ class Theme_view {
         // no color for observers
         if (isset($this->colors[$content['player_id']]))
         {
-          $this->theme['chat'][$key]['user']['color'] = $this->colors[$content['player_id']];
+          $this->theme['chat'][$key]['user']['color'] = $this->color( $this->colors[$content['player_id']] );
         }
         else
         {
-          $this->theme['chat'][$key]['user']['color'] = 'observer';
+          if( $content['player_id'] == 1 ) {
+            $this->theme['chat'][$key]['user']['color'] = 'red';
+          } else {
+            $this->theme['chat'][$key]['user']['color'] = 'black';
+          }
         }
         $this->theme['chat'][$key]['user']['name'] = $content['player_name'];
       }
@@ -71,6 +75,20 @@ class Theme_view {
     }//end foreach
 
   }
+  private function color( $color )
+  {
+    //krumo( $color );
+    switch ( $color ) {
+      case "yellow":
+        $outColor = "#FFDC00";
+        break;
+      default:
+        $outColor = $color;
+    }
+
+    return $outColor;
+  }
+
 
   private function getTeam( $replay , $file )
   {
@@ -157,8 +175,13 @@ class Theme_view {
         else {
           $playerLeaveTime = convert_time($replay->header['length']);
         }
+
         if(isset($player['leave_result'])) {
           $leaveResult = $player['leave_result'];
+          if( is_numeric( $leaveResult ) ) {
+            $leaveResult = "unknown";
+          }
+
         }
         else {
           $leaveResult = "Finished";

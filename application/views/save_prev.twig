@@ -1,23 +1,29 @@
-{{ krumo(replay) }}
+
+{#{{ krumo(replay) }}#}
+
+<h1 class="page-title">{{ replay.title }}</h1>
 
 <div class="replay-details">
 
   <div class="game-info">
-    <h2>{{ replay.title }}</h2>
+
 
     <div class="left-content">
-      <p>Host: {{ replay.game_host }}</p>
-      <p>Players: {{ replay.player_count }}</p>
-      <p>Game duration: {{ replay.time }}</p>
-      <p>Map: {{ replay.map }}</p>
-      <p>Winner: {{ replay.winner }}</p>
+      <p><i class="fa fa-sitemap"></i><span class="label">Host:</span> {{ replay.game_host }}</p>
+      <p><i class="fa fa-users"></i><span class="label">Players:</span> {{ replay.player_count }}</p>
+      <p><i class="fa fa-clock-o"></i><span class="label">Game duration:</span> {{ replay.time }}</p>
+      <p><i class="fa fa-map-marker"></i><span class="label">Map:</span> {{ replay.map }}</p>
+      <p><i class="fa fa-trophy"></i><span class="label">Winner:</span> {{ replay.winner }}</p>
     </div> <!-- left-content -->
 
     <div class="right-content">
-      <p>Saver: {{ replay.game_saver }}</p>
-      <p>Version: {{ replay.version }}</p>
-      <p>Observers: {{ replay.game_observer }}</p>
+      <p><i class="fa fa-floppy-o"></i><span class="label">Saver:</span> {{ replay.game_saver }}</p>
+      <p><i class="fa fa-exclamation-circle"></i><span class="label">Version:</span> {{ replay.version }}</p>
+      <p><i class="fa fa-eye"></i><span class="label">Observers:</span> {{ replay.game_observer }}</p>
     </div> <!-- right-content -->
+
+    <p><i class="fa fa-cloud-download"></i><span class="label">Download: </span><a href="/replay/{{ replay.download.link }}">{{ replay.download.link }}</a></p>
+
   </div> <!-- game-info -->
 
 {# bans #}
@@ -26,7 +32,7 @@
       <h2>Bans</h2>
       <div class="content">
         {% for baned in replay.bans %}
-          <img src="/{{ baned.src }}" title="{{ baned.name }}" alt="{{ baned.name }}" class="{{ baned.team }}" >
+          <img width="45" src="/{{ baned.src }}" title="{{ baned.name }} / {{ baned.team }}" alt="{{ baned.name }}" class="{{ baned.team }}" >
         {% endfor %}
       </div>
     </div>
@@ -38,7 +44,7 @@
       <h2>Picks</h2>
       <div class="content">
         {% for picks in replay.picks %}
-          <img src="/{{ picks.src }}" title="{{ picks.name }}" alt="{{ picks.name }}" class="{{ picks.team }}">
+          <img width="45" src="/{{ picks.src }}" title="{{ picks.name }}" alt="{{ picks.name }}" class="{{ picks.team }}">
         {% endfor %}
       </div>
     </div> <!-- picks -->
@@ -54,42 +60,42 @@
       {% for key , team in replay.teams %}
 
         {% if key == 0 %}
-          <h4>Sentinel</h4>
+          <h4 class="sentinel">Sentinel</h4>
         {% else %}
-          <h4>Scourge</h4>
+          <h4 class="scourge">Scourge</h4>
         {% endif %}
 
         {% for player in team %}
 
           <div class="player">
 
-            <div class="basic_info">
+            <div class="basic-info">
 
               <div class="hero">
-                <img src="/{{ player.image }}" title="{{ player.hero_name }}" alt="{{ player.hero_name }}" >
-                <span class="lvl">Lvl: {{ player.level }}</span>
+                <img width="45" src="/{{ player.image }}" title="{{ player.hero_name }} / Level: {{ player.level }}" alt="{{ player.hero_name }}" >
+                <span class="lvl">{{ player.level }}</span>
               </div> <!--hero-->
 
-              <span>{{ player.player_name }}</span>
+              <span class="user-name" title="User name">{{ player.player_name }}</span>
 
-              <span class="apm">APM: {{ player.apm }}</span>
-              <span class="kda">
+              <span class="apm" title="Action per minutes">APM: {{ player.apm }}</span>
+              <span class="kda" title="Hero: Kills / Death / Assists">
                 K/D/A :
                 {{ player.stat_hero.kills }} /
                 {{ player.stat_hero.deaths }} /
                 {{ player.stat_hero.assists }}
               </span> <!-- kda -->
 
-              <span class="cs">
-                creep kills/denies/neutrals:
-                {{ player.stat_creep.kills }}
-                {{ player.stat_creep.denies }}
+              <span class="cs" title="Creeps: kills/denies/neutrals">
+                CS:
+                {{ player.stat_creep.kills }} /
+                {{ player.stat_creep.denies }} /
                 {{ player.stat_creep.neutrals }}
               </span><!-- cs -->
 
-              <a class="show-more" href="javascript:;">Show more</a>
+              <a class="show-more" href="javascript:;"> <i class="fa fa-arrow-circle-down"></i><i class="fa fa-arrow-circle-up"></i></a>
 
-            </div> <!-- basic_info  -->
+            </div> <!-- basic-info  -->
 
             <div class="more-info">
 
@@ -99,11 +105,64 @@
                 {% endfor %}
               </div> <!-- inventory -->
 
-              <div class="player-game-stat">
-                <p>Game duration: {{ player.leaveTime }}</p>
-                <p class="{{ player.leaveReason }}">Game status: {{ player.leaveReason }} </p>
-                {# {{ krumo('save_prev.twig / line: 105') }} #}
-              </div>
+              <div class="game-stat">
+                <p>
+                  <span class="duration"><b>Game duration:</b> {{ player.leaveTime }}</span>
+                  <span class="{{ player.leaveReason }} game-status"><b>Game status:</b> <span>{{ player.leaveReason }}</span> </span>
+                </p>
+
+                <div class="player-stat">
+
+                  <div class="skill">
+                    <h5>Skills</h5>
+                    <ul class="unlist">
+                    {% for skills in player.skills %}
+                      <li>
+                        <span class="image"><img width="30" src="/{{ skills.src }}" alt="magic" title="magic"/></span>
+                        <span class="time"> {{ skills.time }} </span>
+                        <span class="name"> {{ skills.name }} </span>
+                        <span class="level">{{ skills.level }}</span>
+                      </li>
+                    {% endfor %}
+                    </ul>
+                  </div> <!-- skill -->
+
+                  <div class="item">
+                    <h5>Items</h5>
+
+                    <ul class="unlist">
+                      {% for item in player.items %}
+                        <li>
+                          <span class="image"> <img src="/{{ item.src }}" alt="image" width="30" /> </span>
+                          <span class="time"> {{ item.time }} </span>
+                          <span class="name"> {{ item.name }} </span>
+                        </li>
+                      {% endfor %}
+                    </ul>
+
+                  </div> <!-- item -->
+
+                  <div class="actions">
+                    <h5>Actions</h5>
+                    <ul class="unlist">
+                      {% for action in player.actions %}
+                        <li>
+                          <span class="name"> {{ action.name }} : {{ action.info }}</span>
+
+                          {% set percent = action.width / 100 * 25 %}
+                          {% if percent > 100 %}
+                            {% set percent = 100 %}
+                          {% endif %}
+
+                          <span class="progressbar"> <span style="width: {{ percent }}%" class="progressbar-value"></span> </span>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div> <!-- actions -->
+
+                </div> <!-- player-stat -->
+
+              </div> <!-- game-stat -->
 
             </div> <!-- more-info -->
 
@@ -117,6 +176,23 @@
 
   </div> <!-- teams -->
 
+  <div class="chat">
+
+    <h2>Chat</h2>
+
+    <div class="content default-skin">
+      <ul class="unlist">
+        {% for message in replay.chat %}
+          <li>
+            <span class="time">{{ message.time }}</span>
+            <span style="color: {{ message.user.color }} " class="player"> {{ message.user.name }} </span> :
+            <span class="message"> {{ message.text }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
 
 
-</div> <!--
+</div> <!-- replay-details -->

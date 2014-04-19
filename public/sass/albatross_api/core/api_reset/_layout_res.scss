@@ -22,3 +22,8 @@ body {
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	box-sizing: border-box; 
 }
+
+ul.unlist {
+	list-style: none;
+	padding-left: 0;
+}

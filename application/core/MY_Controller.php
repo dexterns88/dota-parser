@@ -8,6 +8,8 @@ class MY_Controller extends CI_Controller {
   {
     parent::__construct();
 
+    $this->data['jsplugin'] = array();
+
   //load ci
     $this->load->helper('url');
 

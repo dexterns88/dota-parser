@@ -46,3 +46,260 @@
 	}
 
 }
+
+
+// replay details
+.replay-details {
+	
+	.game-info {
+		background: #fff;
+		margin: -9px -19px 0;
+    padding: 15px;
+
+		.label {
+			font-weight: bold;
+		}
+		
+		i.fa {
+			color: #939191;
+			margin-right: 6px;
+			font-size: 15px;
+			text-align: center;
+			width: 20px;
+		}
+
+	}//game-info
+
+	.left-content,
+	.right-content {
+		display: inline-block;
+		vertical-align: top;
+		width: 50%;
+	}	
+	.right-content { margin-left: -4px; }
+
+	h2 {
+		background: none repeat scroll 0 0 #FFFFFF;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 10px -19px;
+    min-width: 100px;
+    padding: 4px 20px;
+    @include border-radius( 0 5px 5px 0);
+	}
+
+	.picks,
+	.bans{
+		
+		img {
+			@include border-radius( 0 0 3px 3px );
+		}
+
+		.sentinel {
+			border-bottom: 3px solid #03FF03;
+		}
+
+		.scourge {
+			border-bottom: 3px solid #993300;
+		}
+
+	} // picks , bans
+
+//teams
+	.teams {
+		
+		h4 {
+			border-bottom: 2px solid transparent;
+	    border-left: 4px solid transparent;
+    	color: #FFFFFF;
+    	font-weight: bold;
+    	padding-left: 25px;
+    	text-transform: uppercase;
+    	margin-left: -22px;
+			@include text-shadow( 2px 2px 0 #000000 );
+
+    	&.sentinel { border-color: #03FF03; }
+    	&.scourge { border-color: #993300 }
+
+		}
+
+		.player {
+			border-bottom: 1px solid #AFAFAF;
+    	box-shadow: 0 1px 0 0 #000000;
+    	padding: 10px 5px;
+		}//player
+		
+		.basic-info {
+			
+			.fa-arrow-circle-up {
+				display: none;
+			}
+
+			> * {
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 30px;
+				color: #dfdfdf;
+			}
+
+			.hero {
+				position: relative;
+
+				.lvl {
+					background: none repeat scroll 0 0 #FFFFFF;
+			    border: 1px solid #FFA500;
+			    border-radius: 0 0 10px;
+			    color: #000000;
+			    font-size: 11px;
+			    left: -2px;
+			    padding: 2px;
+			    position: absolute;
+			    top: -2px;
+				} //lvl
+
+			}//hero
+
+			.user-name { width: 160px; }
+			.apm { width: 80px; }
+			.kda { width: 140px; }
+
+			.show-more {
+				float: right;
+		    font-size: 44px;
+		    position: relative;
+		    top: 0px;
+			}
+
+		}
+
+		.more-info {
+			padding-top: 15px;
+			width: 100%;
+
+			@include pie-clearfix();
+			
+			display: none;
+
+			.no-js & {
+				display: block;
+			}
+		
+		}//more-info
+
+		.inventory {
+			background-color: #000000;
+	    display: inline-block;
+	    max-width: 80px;
+	    padding: 2px;
+	  	float: left;
+
+	    img {
+	    	display: inline-block;
+		    float: left;
+		    width: 40px;
+	    }
+	    
+		}//inventory
+		
+		.game-stat {
+			margin-left: 100px;
+			
+			p > span {
+				margin-right: 30px;
+				display: inline-block;
+			}
+
+			.Finished span { 
+				color: #25E233;
+			}
+			.Left span {
+				color: #FF2828;
+			}
+			.Disconnect span {
+				color: #AFADAD;
+			}
+			.unknown span {
+				color: #ECEC00;
+			}
+
+		}//game-stat
+
+		.player-stat {
+			background-color: #FFFFFF;
+    	border-radius: 10px;
+    	padding: 5px 10px;
+
+			.skill,
+			.item,
+			.actions {
+				
+				display: inline-block;
+				vertical-align: top;
+				margin-right: 30px;
+
+				li > span { 
+					display: inline-block; 
+					vertical-align: middle;
+					margin-right: 10px;
+				}
+
+				.count {
+					width: 20px;
+					text-align: center;
+				}
+
+			}
+
+		}//player-stat
+
+	}//teams
+
+}//replay-details
+
+
+.progressbar {
+	background-color: #e9e9e9 !important;
+	display: block !important;
+	width: 100% !important;
+	height: 10px !important;
+	margin: 0 !important;
+	padding: 3px !important;
+	@include box-sizing(border-box);
+
+	.progressbar-value {
+		background-color: #24afb2;
+		display: block;
+		height: 100%;
+	}
+
+}
+
+//chat
+
+.chat {
+	
+	.content {
+		background-color: #fff;
+		border: 2px solid #303030;
+		max-height: 360px;
+		height: 360px;
+		padding: 10px;
+
+    .no-js & {
+	    overflow-y: auto;
+    }
+
+	}
+
+	ul li {
+		padding: 6px 5px;
+		border-top: 1px solid #9D9D9D;
+		
+		&:first-child {
+			border-top: none;
+		}
+
+	}
+
+}//chat
