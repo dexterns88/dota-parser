@@ -92,8 +92,9 @@ class Upload extends MY_Controller {
       }
       else
       {
+        $links = "/view/save/" . $uploaded_file['raw_name'];
         if ( $this->reshine->extra['parsed'] == true ) {
-          $this->data['message'] = 'Replay uploaded successfully. <a href="view_replay/" > View details </a>';
+          $this->data['message'] = "Replay uploaded successfully. <a href='{$links}' > View details </a>";
           $this->data['reply'] = $this->reshine;
           $this->data['content'] = $this->twig->render('success_uploaded' , $this->data );
           $this->twig->display('main_tpl' , $this->data );
