@@ -1,4 +1,6 @@
+{% if ajax != true %}
 <div class="replay_list">
+{% endif %}
 
     <div class="view-item item-head">
       <p class="item-row title-h">Title</p>
@@ -23,4 +25,9 @@
       </p>
     </div>
   {% endfor %}
+
+  {{ pagination|raw }}
+
+{% if ajax == false %}
 </div>
+{% endif %}

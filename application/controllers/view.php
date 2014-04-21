@@ -5,20 +5,58 @@ class View extends MY_Controller {
 
   var $query , $file , $replayConf , $replay;
 
+  private $itemsPager = 3;
+
   public function index()
   {
+    $this->load->helper('url');
+    redirect('/view/page');
+  }
+
+  public function page( $i = 0 )
+  {
+    $this->load->library('pagination');
+    $this->load->model('save_replay');
     $this->data['pagetitle'] = "Replay list";
 
-    $this->load->model('save_replay');
+    $query_pagination['page'] = $i;
+    $query_pagination['item_per_page'] = $this->itemsPager;
+
+    $query['lists'] = $this->save_replay->view_all( 'limit', $query_pagination );
+
+    $config = $this->pagerConf( $this->save_replay->view_all( 'numrow', $query_pagination ) );
+
+    $this->pagination->initialize($config);
+    $query['pagination'] = $this->pagination->create_links();
 
     $this->data['title'] = 'Save listing';
 
-    $query['lists'] = $this->save_replay->view_all();
-
     $this->data['content'] = $this->twig->render('list_view' , $query );
-
-
     $this->twig->display('main_tpl' , $this->data );
+
+
+  }
+
+  public function ajax($i = 0)
+  {
+    $this->load->library('pagination');
+    $this->load->model('save_replay');
+
+    $query_pagination['page'] = $i;
+    $query_pagination['item_per_page'] = $this->itemsPager;
+
+    $query['lists'] = $this->save_replay->view_all( 'limit', $query_pagination );
+
+    $config = $this->pagerConf( $this->save_replay->view_all( 'numrow', $query_pagination ) );
+
+    $this->pagination->initialize($config);
+    $query['pagination'] = $this->pagination->create_links();
+
+    $this->data['title'] = 'Save listing';
+    $query['ajax'] = true;
+
+    $this->twig->display('list_view' , $query );
+
   }
 
   public function save($i)
@@ -65,6 +103,30 @@ class View extends MY_Controller {
     $this->twig->display('main_tpl' , $this->data );
 
 
+  }
+
+  private function pagerConf( $page )
+  {
+    //$config['base_url'] = 'http://example.com/index.php/test/page/';
+    $config['base_url'] = '/view/page';
+    $config['total_rows'] = $page; //100;
+    $config['per_page'] = $this->itemsPager;
+    $config['full_tag_open'] ="<ul class='pager'>";
+    $config['full_tag_close'] ="</ul>";
+    $config['num_tag_open'] = '<li>';
+    $config['num_tag_close'] = '</li>';
+    $config['prev_tag_open'] = '<li>';
+    $config['prev_tag_close'] = '</li>';
+    $config['next_tag_open'] = '<li>';
+    $config['next_tag_close'] = '</li>';
+    $config['last_tag_open'] = '<li>';
+    $config['last_tag_close'] = '</li>';
+    $config['first_tag_open'] = '<li>';
+    $config['first_tag_close'] = '</li>';
+    $config['cur_tag_open'] = '<li class="current">';
+    $config['cur_tag_close'] = '</li>';
+
+    return $config;
   }
 
 }

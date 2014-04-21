@@ -9,6 +9,9 @@
 
 	$(document).ready(function(){
 		$('.teams .player .basic-info').heroExpand();
+
+    $('.replay_list .pager').ajaxView();
+
 	});
 
 //plugin
@@ -70,6 +73,51 @@ $.fn.heroExpand = function() {
     (new $.heroExpand($(this)));
   });        
 };
+
+// ajax 
+
+$.ajaxView = function( element ) {
+  
+  var settings = {};
+  element.data('ajaxView' , this);
+
+  var obj = this;
+
+  this.init = function() {
+    this._ajax();
+  };
+
+  this._ajax = function() {
+
+    var link = $('.replay_list .pager a');
+    
+    link.on('click',function(e){
+      e.preventDefault();
+      var page = $(this).attr('href').split('/');
+      if( page[3].length == 0 ) {
+        page = 0;
+      } else {
+        page = page[3];  
+      }
+      var url = "/view/ajax/" + page;
+      
+      $(".replay_list" ).load( url , function(){
+        obj.init();
+      });
+
+    });
+    
+  };
+  
+  this.init();
+};
+
+$.fn.ajaxView = function() {
+  return this.each(function() {
+    (new $.ajaxView($(this)));
+  });        
+};
+
 
 
 })(jQuery);

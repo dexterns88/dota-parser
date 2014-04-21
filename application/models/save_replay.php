@@ -25,12 +25,25 @@ class Save_replay extends CI_Model {
     return $result;
   }
 
-  function view_all()
+  function view_all( $mod  , $qPagination )
   {
-    $item = "title, date , saver , link";
-    $query = $this->db->query("SELECT {$item} from games_replay");
 
-    if ($query->num_rows() > 0)
+    $item = "title, date , saver , link";
+
+    if( $mod == "limit" ){
+      $limit = "LIMIT {$qPagination['page']}, {$qPagination['item_per_page']}";
+      $query = $this->db->query("SELECT {$item} from games_replay ORDER BY date DESC {$limit}");
+    } elseif( $mod == "numrow" ) {
+      $query = $this->db->query("SELECT {$item} from games_replay");
+    }
+
+    $numQuery = $query->num_rows();
+
+    if( $mod == "numrow" ) {
+      return $numQuery;
+    }
+
+    if ( $numQuery > 0)
     {
       $out = array();
       foreach ($query->result() as $row)
