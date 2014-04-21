@@ -90,7 +90,7 @@ $.ajaxView = function( element ) {
   this._ajax = function() {
 
     var link = $('.replay_list .pager a');
-    
+
     link.on('click',function(e){
       e.preventDefault();
       var page = $(this).attr('href').split('/');
@@ -101,7 +101,7 @@ $.ajaxView = function( element ) {
       }
       var url = "/view/ajax/" + page;
       
-      $(".replay_list" ).load( url , function(){
+      $(".replay_list" ).load( url ,  { 'type':'ajax' } , function(){
         obj.init();
       });
 

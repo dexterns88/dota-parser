@@ -20,7 +20,9 @@
         {{ list.date|date("H:m") }}
       </p>
       <p class="item-row link">
-        <a class="preview" href="/view/save/{{ list.link|trim('.w3g')  }}" ><i class="fa fa-list"></i>Details</a>
+        {% set len = list.link|length - 4 %}
+        {% set viewLink = list.link|slice( 0 , len ) %}
+        <a class="preview" href="/view/save/{{ viewLink }}" ><i class="fa fa-list"></i>Details</a>
         <a class="download" href="/replay/{{ list.link }}"><i class="fa fa-cloud-download"></i>Download</a>
       </p>
     </div>
