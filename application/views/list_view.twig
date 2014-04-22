@@ -1,6 +1,15 @@
 {% if ajax != true %}
+
+{% if type %}
+<div class="{{ type }}">
+{% endif %}
+
 <div class="replay_list">
 {% endif %}
+
+    {% if title %}
+      <h2>{{ title }}</h2>
+    {% endif %}
 
     <div class="view-item item-head">
       <p class="item-row title-h">Title</p>
@@ -32,4 +41,9 @@
 
 {% if ajax == false %}
 </div>
+
+  {% if type %}
+    </div> <!-- end {{ type }} -->
+  {% endif %}
+
 {% endif %}

@@ -2522,11 +2522,20 @@ header {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000318}}
+.page {
+  background-image: url("../images/site/hero_anim/pudge.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 380px auto;
+  min-height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000326}}
 .logo {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000330}}
 .main-nav {
   text-align: center;
   background-image: url(../images/site/menu-border.jpg);
@@ -2535,7 +2544,7 @@ header {
   padding-bottom: 11px;
   padding-top: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000338}}
 .main-nav a {
   background-image: url(../images/site/manu-active-border.jpg);
   background-repeat: repeat-x;
@@ -2551,13 +2560,13 @@ header {
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000350}}
 .main-nav a:hover, .main-nav a.active {
   color: #fff;
   background-position: 0 bottom;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000359}}
 .region-content {
   background-color: rgba(255, 255, 255, 0.2);
   margin: 0 auto;
@@ -2572,7 +2581,7 @@ header {
   -moz-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000368}}
 .region-content > h1 {
   background: none repeat scroll 0 0 #292D30;
   border-bottom: 1px solid #FFFFFF;

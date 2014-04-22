@@ -15,6 +15,14 @@ header {
 	padding-bottom: 30px;
 }
 
+.page {
+	background-image: url("../images/site/hero_anim/pudge.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 380px auto;
+  min-height: 100%;
+}
+
 .logo {
 	color: #fff;
 }

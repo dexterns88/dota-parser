@@ -1,0 +1,32 @@
+{% if type %}
+  <div class="{{ type }}">
+{% endif %}
+
+    <div class="news-list">
+
+      {% if title %}
+        <h2>{{ title }}</h2>
+      {% endif %}
+
+      {% if content %}
+        {% for news in content %}
+        <div class="news-item">
+          <div class="title">
+            <a href='/news/read/{{ news.id }}'>{{ news.title }}</a>
+          </div>
+          <div class="posted"><i class="fa fa-clock-o"></i> {{ news.date|date("m/d/Y H:m") }} </div>
+          <div class="content">
+            {{ news.text|slice(0,125) }}...
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p>We don't have news today</p>
+      {% endif %}
+
+
+    </div>
+
+{% if type %}
+  </div>
+{% endif %}
