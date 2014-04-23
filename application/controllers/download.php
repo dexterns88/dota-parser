@@ -8,7 +8,7 @@
 
 class Download extends My_Controller { //CI_Controller {
 
-  private $storage , $file;
+  private $file;
 
   public function index()
   {
@@ -23,10 +23,9 @@ class Download extends My_Controller { //CI_Controller {
       show_404();
     }
 
-    $this->storage = APPPATH . "storage/";
-
     $this->file = $this->storage . $files;
 
+    krumo( $this->file );
     if ( file_exists($this->file) )
     {
       header('Content-Description: File Transfer');

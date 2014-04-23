@@ -20,20 +20,14 @@ class Upload extends MY_Controller {
     $this->load->helper( array( 'file' , 'date' ) );
     $time = time();
 
-    $config['upload_path'] = './replay/';
+    //$config['upload_path'] = './replay/';
+    $config['upload_path'] = $this->storage;
     $config['allowed_types'] = 'w3g';
     $config['max_size']	= '2000';
     $config['file_name'] = "reply_" . $time;
 
     $this->load->library('upload', $config);
-    $this->load->library('reshine/reshine');
-
-
-
-    //$datestring = "Year: %Y Month: %m Day: %d - %h:%i %a";
-    //$localTime =  gmt_to_local( $time , 'UP1' , true  );
-    //krumo( mdate($datestring, $time) );
-    //krumo(mdate($datestring , $localTime ));
+    $this->load->library(array('reshine/reshine','theme_view'));
 
 
     $postData = $_POST;
@@ -53,14 +47,12 @@ class Upload extends MY_Controller {
       $uploaded_file = $this->upload->data();
       $this->reshine->replay( $uploaded_file['full_path'] );
 
-
       $model_date['saver'] = $this->reshine->game['saver_name'];
       $model_date['title'] = $_POST['replay_title'];
       $model_date['time'] = $time;
       $model_date['link'] = $uploaded_file['orig_name'];
 
       $this->reshine->extra['title'] = $model_date['title'];
-
 
       if( "Automatic" != $postData['replay_winner'] ) {
         $this->reshine->extra['winner'] = ( $postData['replay_winner'] == "Sentinel" ? "Sentinel" : "Scourge" );
@@ -76,7 +68,11 @@ class Upload extends MY_Controller {
       $this->reshine->extra['original_filename'] = $uploaded_file['file_name'];
 
       $txtFile = $uploaded_file['file_path'] . $uploaded_file['raw_name'] . ".txt";
-      $test = write_file( $txtFile , serialize( $this->reshine ) );
+      $origin = $uploaded_file['file_path'] . $uploaded_file['raw_name'] . ".w3g";
+
+      $output = $this->theme_view->render( $this->reshine , $uploaded_file['raw_name'] );
+
+      $test = write_file( $txtFile , serialize( $output ) );
 
       $insertRes = $this->save_replay->insert($model_date);
 

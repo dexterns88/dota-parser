@@ -12,9 +12,12 @@ application/logs/*
 #custom added
 
 application/config/database.php
+application/storage
+
 
 public/user_guide/*
 public/replay
+
 
 .idea/*
 

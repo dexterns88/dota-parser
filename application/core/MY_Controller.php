@@ -3,6 +3,7 @@
 class MY_Controller extends CI_Controller {
 
   protected $data = array();
+  protected $storage;
 
   function __construct()
   {
@@ -31,7 +32,14 @@ class MY_Controller extends CI_Controller {
       2 => array( "url" => "/view" , "title" => "Replay database")
     );
 
+    //render menu
     $this->data['nav'] = $this->twig->render('menu' , $menu );
+
+    $this->storage = APPPATH . $this->config->item('storage');
+
+    if (!is_dir( $this->storage )) {
+      mkdir( $this->storage , 0644, TRUE);
+    }
 
   }
 

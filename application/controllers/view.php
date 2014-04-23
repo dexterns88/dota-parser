@@ -80,7 +80,7 @@ class View extends MY_Controller {
     array_push( $this->data['jsplugin'] , "/script/jquery.mousewheel.min.js" );
 
     $file = $i;
-    $replayConf['storage'] = './replay/';
+    $replayConf['storage'] = $this->storage;
     $replayConf['storageRaw'] = 'replay\\';
     $replayConf['file_full'] = $replayConf['storage'] . $file;
 
@@ -93,24 +93,13 @@ class View extends MY_Controller {
       $txt_file = read_file( $replayConf['file_full'] . '.txt' );
       $replay = unserialize($txt_file);
     }
-    else if ( file_exists( $replayConf['file_full'] . ".w3g" ) )
-    {
-      //$fileSave = FCPATH . $replayConf['storageRaw'] . $file . ".w3g"; // full path server
-      $fileSave = $replayConf['file_full'] . '.w3g';
-      $replay = $this->reshine->replay( $fileSave );
-      $txt_file = write_file( $replayConf['file_full'] . '.txt' , serialize( $this->reshine ) );
-    }
     else
     {
-      $data['message'] = "<div class='message error'>File doesn't exist</div>";
+      $this->data['message'] = "<div class='message error'>File doesn't exist</div>";
     }
 
-    //$version = sprintf('%02d', $replay->header['major_v']);
-
-    //krumo( $replay );
-
     if( isset($replay) ) {
-      $json_theme['replay'] = $this->theme_view->render( $replay , $i );
+      $json_theme['replay'] = $replay;
       $this->data['content'] = $this->twig->render('save_prev' , $json_theme );
     }
     $this->twig->display('main_tpl' , $this->data );
@@ -120,7 +109,6 @@ class View extends MY_Controller {
 
   private function pagerConf( $page )
   {
-    //$config['base_url'] = 'http://example.com/index.php/test/page/';
     $config['base_url'] = '/view/page';
     $config['total_rows'] = $page; //100;
     $config['per_page'] = $this->itemsPager;
@@ -138,13 +126,10 @@ class View extends MY_Controller {
     $config['first_tag_close'] = '</li>';
     $config['cur_tag_open'] = '<li class="current">';
     $config['cur_tag_close'] = '</li>';
-
     $config['prev_link'] = '<i class="fa fa-angle-left"></i>';
     $config['first_link'] = '<i class="fa fa-angle-double-left"></i>';
-
     $config['next_link'] = '<i class="fa fa-angle-right"></i>';
     $config['last_link'] = '<i class="fa fa-angle-double-right"></i>';
-
     return $config;
   }
 

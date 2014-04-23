@@ -357,6 +357,10 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-
 /* End of file config.php */
 /* Location: ./application/config/config.php */
+
+/* myconfig */
+//$config['storage'] = 'storage/';
+
+$config['storage'] = 'storage/';
