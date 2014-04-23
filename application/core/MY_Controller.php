@@ -22,7 +22,16 @@ class MY_Controller extends CI_Controller {
       '/stylesheets/albatross_api.css'
     );
 
-    $this->data['nav'] = $this->twig->render('menu');
+    $thisUrl = uri_string();
+    $thisUrl =  preg_split("/\//" , $thisUrl);
+    $menu['curentUrl'] = "/" . $thisUrl[0];
+    $menu['items'] = array(
+      0 => array( "url" => "/" , "title" => "Home"),
+      1 => array( "url" => "/upload", "title" => "Upload replay" ),
+      2 => array( "url" => "/view" , "title" => "Replay database")
+    );
+
+    $this->data['nav'] = $this->twig->render('menu' , $menu );
 
   }
 

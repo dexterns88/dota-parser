@@ -1,5 +1,5 @@
 <nav class="main-nav">
-  <a href="/">Home</a>
-  <a href="/upload">Upload replay</a>
-  <a href="/view">Replay database</a>
+  {% for item in items %}
+    <a {% if curentUrl == item.url %} class="active" {% endif %} href="{{ item.url }}">{{ item.title }}</a>
+  {% endfor %}
 </nav>
