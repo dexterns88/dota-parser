@@ -49,7 +49,6 @@ class View extends MY_Controller {
     }
 
     if( $flag ) {
-      //redirect('/view/page');
       show_404();
     }
 
