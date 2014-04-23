@@ -38,7 +38,7 @@ class MY_Controller extends CI_Controller {
     $this->storage = APPPATH . $this->config->item('storage');
 
     if (!is_dir( $this->storage )) {
-      mkdir( $this->storage , 0644, TRUE);
+      mkdir( $this->storage , 0766, TRUE);
     }
 
   }
