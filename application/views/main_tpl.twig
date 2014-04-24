@@ -12,7 +12,7 @@
   {% endfor %}
 
 </head>
-<body>
+<body {% if body_class %} class="{{ body_class }}" {% endif %}>
 
   <div class="page">
     <header>
@@ -34,14 +34,14 @@
 
       {{ content|raw }}
     </div> <!-- region-content -->
+    <footer class="region-footer">
+      <div class="footer-inner">
+        <p>copyright 2014 by Elitearea.org</p>
+        {{ memory_usage }} / {{ elapsed_time }}
+      </div>
+    </footer> <!-- footer -->
 
   </div> <!-- page -->
-
-  <footer>
-    <p>copyright 2014 by Elitearea.org</p>
-
-    {{ memory_usage }} / {{ elapsed_time }}
-  </footer> <!-- footer -->
 
   <div id="script" style="display: none; visibility: hidden;">
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.2.min.js"></script>

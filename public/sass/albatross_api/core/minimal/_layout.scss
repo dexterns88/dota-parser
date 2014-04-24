@@ -6,3 +6,7 @@
 code {
 	display: block;
 }
+
+.clear {
+	@include pie-clearfix();
+}

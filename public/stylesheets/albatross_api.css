@@ -2474,6 +2474,17 @@ code {
   display: block;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/minimal\/_layout\.scss}line{font-family:\0000310}}
+.clear {
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
+.clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/minimal\/_table\.scss}line{font-family:\000032}}
 table {
   width: 100%;
@@ -2515,13 +2526,18 @@ a {
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000312}}
+i.fa {
+  color: #50D623;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000316}}
 header {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 30px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000322}}
 .page {
   background-image: url("../images/site/hero_anim/pudge.png");
   background-position: right bottom;
@@ -2530,12 +2546,12 @@ header {
   min-height: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000330}}
 .logo {
   color: #fff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000334}}
 .main-nav {
   text-align: center;
   background-image: url(../images/site/menu-border.jpg);
@@ -2544,7 +2560,7 @@ header {
   padding-bottom: 11px;
   padding-top: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000342}}
 .main-nav a {
   background-image: url(../images/site/manu-active-border.jpg);
   background-repeat: repeat-x;
@@ -2560,13 +2576,13 @@ header {
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000354}}
 .main-nav a:hover, .main-nav a.active {
   color: #fff;
   background-position: 0 bottom;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000363}}
 .region-content {
   background-color: rgba(255, 255, 255, 0.2);
   margin: 0 auto;
@@ -2581,7 +2597,7 @@ header {
   -moz-box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
   box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000372}}
 .region-content > h1 {
   background: none repeat scroll 0 0 #292D30;
   border-bottom: 1px solid #FFFFFF;
@@ -2595,6 +2611,68 @@ header {
   -ms-border-radius: 10px 10px 0 0;
   -o-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000385}}
+.region-footer {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/Ruby200-x64\/lib\/ruby\/gems\/2\.0\.0\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
+.region-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\0000392}}
+.footer-inner {
+  float: right;
+  background-color: #fff;
+  padding: 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -ms-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\00003100}}
+body.front .region-content {
+  background: none;
+  padding: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\00003106}}
+body.front .block {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\00003113}}
+body.front .block .view-item.item-head {
+  color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\00003117}}
+body.front .block .view-item {
+  margin: 0;
+  padding: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_layout\.scss}line{font-family:\00003124}}
+body.front .footer-inner {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-top: -2px;
+  padding-top: 10px;
+  text-shadow: 0px 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_form\.scss}line{font-family:\000035}}
@@ -2964,6 +3042,54 @@ form .form-submit:hover {
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003299}}
 .chat ul li:first-child {
   border-top: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003308}}
+.block-replay {
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003313}}
+.block-replay .view-item .saver,
+.block-replay .view-item .date {
+  display: none !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003318}}
+.block-replay .item-head {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003325}}
+.block_news {
+  margin-top: 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003328}}
+.block_news h2 {
+  margin-top: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003332}}
+.block_news .title {
+  font-size: 22px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003337}}
+.block_news .title,
+.block_news .posted {
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003339}}
+.block_news .title a,
+.block_news .posted a {
+  color: #000;
+  text-transform: upercase;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003348}}
+.news-list .news-item {
+  border-top: 1px solid #A6A6A6;
+  padding: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/default_themes\/_element\.scss}line{font-family:\00003353}}
+.news-list .content {
+  margin-top: 10px;
 }
 
 /* basic scrollbar styling */
