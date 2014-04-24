@@ -25,7 +25,6 @@ class Download extends My_Controller { //CI_Controller {
 
     $this->file = $this->storage . $files;
 
-    krumo( $this->file );
     if ( file_exists($this->file) )
     {
       header('Content-Description: File Transfer');
