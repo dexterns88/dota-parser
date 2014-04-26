@@ -424,3 +424,10 @@
 	text-decoration: none;
 	@include box-sizing(border-box);
 }
+
+
+body.page404 {
+	.hero-search {
+		text-align: center;
+	}
+}
