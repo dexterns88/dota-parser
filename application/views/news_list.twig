@@ -2,28 +2,49 @@
   <div class="{{ type }}">
 {% endif %}
 
+    {% if type == null %}
+      {% set view= "full" %}
+    {% else %}
+      {% set view= "teaser" %}
+    {% endif %}
+
+
     <div class="news-list">
 
       {% if title %}
-        <h2>{{ title }}</h2>
+        <div class="news-header">
+          <h2>{{ title }}</h2>
+          {% if view =='teaser' %}
+            <a href="/news/page">View all</a>
+          {% endif %}
+        </div>
       {% endif %}
+
 
       {% if content %}
         {% for news in content %}
         <div class="news-item">
           <div class="title">
-            <a href='/news/read/{{ news.id }}'>{{ news.title }}</a>
+            <h2>{{ news.title  }}</h2>
           </div>
           <div class="posted"><i class="fa fa-clock-o"></i> {{ news.date|date("m/d/Y H:m") }} </div>
           <div class="content">
-            {{ news.text|slice(0,125) }}...
+            {% if view == 'full' %}
+              {{ news.text }}
+            {% else  %}
+              {{ news.text|slice(0,125) }}...
+            {% endif %}
           </div>
         </div>
         {% endfor %}
+
       {% else %}
         <p>We don't have news today</p>
       {% endif %}
 
+      {% if pagination %}
+        {{ pagination|raw }}
+      {% endif %}
 
     </div>
 

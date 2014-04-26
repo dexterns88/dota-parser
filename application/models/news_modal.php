@@ -12,13 +12,22 @@ class News_modal extends CI_Model {
 
   function read( $settings = false )
   {
+    $row = "id , date , text , title";
+
+    if( isset( $settings['numrow'] ))
+    {
+      if( $settings['numrow'] == true )  {
+        $sql = "SELECT {$row} from news";
+        $num = $this->db->query($sql);
+        $num = $num->num_rows;
+        return $num;
+      }
+    }
 
     if( isset($settings['limit']))
     {
       $limit = "LIMIT {$settings['limit']['start']} , {$settings['limit']['count']}";
     }
-
-    $row = "id , date , text , title";
 
     $sql = "SELECT {$row} from news {$limit}";
 

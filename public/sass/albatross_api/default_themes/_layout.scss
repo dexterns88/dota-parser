@@ -9,9 +9,9 @@ a {
 	color: #AFC7CD;
 }
 
-i.fa {
-	color: #50D623;
-}
+// i.fa {
+// 	color: #50D623;
+// }
 
 header {
 	text-align: center;
@@ -91,9 +91,11 @@ header {
 
 .footer-inner {
 	float: right;
-	background-color: #fff;	
+	background-color: rgba(255, 255, 255, 0.2);
 	padding: 5px;
 	@include border-radius( 0 0 5px 5px);
+	@include text-shadow( 0px 1px 0 rgba(255,255,255,0.3) );
+	
 }
 
 body.front {
@@ -104,11 +106,12 @@ body.front {
 	}
 
 	.block {
-		background-color: #fff;
+		background-color: rgba( 255,255,255,0.2 );//#fff;
 		color: #000;
 		padding: 10px;
 
-		@include border-radius( 5px );
+
+		@include border-radius( 5px 5px 0 5px );
 
 		.view-item.item-head {
 			color: #000;
@@ -121,11 +124,11 @@ body.front {
 
 	}
 
-	.footer-inner {
-		background-color: rgba(255, 255, 255, 0.2);
-		margin-top: -2px;
-		padding-top: 10px;
-		@include text-shadow( 0px 1px 0 rgba(255,255,255,0.3) );
-	}
+	// .footer-inner {
+	// 	background-color: rgba(255, 255, 255, 0.2);
+	// 	margin-top: -2px;
+	// 	padding-top: 10px;
+	// 	@include text-shadow( 0px 1px 0 rgba(255,255,255,0.3) );
+	// }
 
 }

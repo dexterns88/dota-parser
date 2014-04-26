@@ -21,16 +21,21 @@
     </div>
 
   {% for list in lists %}
+
+    {% set len = list.link|length - 4 %}
+    {% set viewLink = list.link|slice( 0 , len ) %}
+
     <div class="view-item">
-      <p class="item-row title"> {{ list.title }} </p>
-      <p class="item-row saver" > {{ list.saver  }}</p>
-      <p class="item-row date">
-        {{ list.date|date("m/d/Y") }}
-        {{ list.date|date("H:m") }}
-      </p>
+      <a class="linked" href="/view/save/{{ viewLink }}">
+        <span class="item-row title"> {{ list.title }} </span>
+       <span class="item-row saver" > {{ list.saver  }}</span>
+        <span class="item-row date">
+          {{ list.date|date("m/d/Y") }}
+         {{ list.date|date("H:m") }}
+       </span>
+      </a>
+
       <p class="item-row link">
-        {% set len = list.link|length - 4 %}
-        {% set viewLink = list.link|slice( 0 , len ) %}
         <a class="preview" href="/view/save/{{ viewLink }}" ><i class="fa fa-list"></i>Details</a>
         <a class="download" href="/download/replay/{{ list.link }}"><i class="fa fa-cloud-download"></i>Download</a>
       </p>

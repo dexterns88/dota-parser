@@ -29,7 +29,8 @@ class MY_Controller extends CI_Controller {
     $menu['items'] = array(
       0 => array( "url" => "/" , "title" => "Home"),
       1 => array( "url" => "/upload", "title" => "Upload replay" ),
-      2 => array( "url" => "/view" , "title" => "Replay database")
+      2 => array( "url" => "/view" , "title" => "Replay database"),
+      3 => array( "url" => "/news" , "title" => "News")
     );
 
     //render menu
