@@ -6,6 +6,8 @@ class Welcome extends MY_Controller {
 	public function index()
 	{
 
+    array_push( $this->data['styles'] , "http://fonts.googleapis.com/css?family=Covered+By+Your+Grace" );
+
     $this->load->model( array('save_replay' , 'news_modal' ) );
 
     $this->data['body_class'] = "front";
@@ -30,7 +32,7 @@ class Welcome extends MY_Controller {
 
 
     $this->data['content'] = "<div class='clear'>" . $this->twig->render('list_view' , $query );
-
+    $this->data['content'] .= $this->twig->render('upload_block');
     $this->data['content'] .= "</div>";
 
     $this->data['content'] .= $this->twig->render('news_list' , $news );
