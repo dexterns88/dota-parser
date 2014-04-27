@@ -22,6 +22,7 @@ class Save_replay extends CI_Model {
     $value = " {$this->db->escape($data['title'])} , '{$data['time']}' , '{$data['saver']}' , '{$data['link']}' ";
     $sql = "INSERT INTO games_replay( {$row} ) VALUES( {$value} )";
     $result = $this->db->query( $sql );
+    $this->db->close();
     return $result;
   }
 
@@ -40,6 +41,7 @@ class Save_replay extends CI_Model {
     $numQuery = $query->num_rows();
 
     if( $mod == "numrow" ) {
+      $this->db->close();
       return $numQuery;
     }
 
@@ -53,6 +55,9 @@ class Save_replay extends CI_Model {
     } else {
       $out = false;
     }
+
+    $this->db->close();
+
     return $out;
 
   }

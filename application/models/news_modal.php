@@ -43,7 +43,8 @@ class News_modal extends CI_Model {
 
     }
     else $out = false;
-
+    $this->db->close();
+    
     return $out;
   }
 
