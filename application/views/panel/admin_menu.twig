@@ -1,0 +1,7 @@
+<div class="admin_menu">
+  <ul>
+  {% for name , url in item %}
+    <li><a href="/panel/{{ url }}">{{ name }}</a></li>
+  {% endfor %}
+  </ul>
+</div>

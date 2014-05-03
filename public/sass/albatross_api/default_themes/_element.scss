@@ -431,3 +431,37 @@ body.page404 {
 		text-align: center;
 	}
 }
+
+.user-info {
+	width: $page-width;
+	margin: 0 auto;
+	@include pie-clearfix();
+
+	.user-info-inner {
+		background-color: #f66000;
+		display: inline-block;
+		float: right;
+		padding: 4px;
+		@include border-radius( 0 0 5px 5px );
+	}
+
+	.image {
+		display: inline-block;
+		vertical-align: middle;
+		@include border-radius(100%);
+	}
+
+	.content {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 5px;
+		a,span {
+			display: block;
+		}
+	}
+
+}
+
+.admin_menu {
+	
+}

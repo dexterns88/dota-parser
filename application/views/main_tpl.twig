@@ -15,6 +15,10 @@
 <body {% if body_class %} class="{{ body_class }}" {% endif %}>
 
   <div class="page">
+    {% if user %}
+      {% include 'panel/user_head.twig' with user %}
+    {% endif %}
+
     <header>
       <a class="logo" href="http://{{ url }}">w3xSilverCloud</a>
 
@@ -24,13 +28,19 @@
 
     </header> <!-- header -->
 
+    {% if message %}
+      {{ message|raw }}
+    {% endif %}
+
+    {% if submenu %}
+      {{ submenu|raw }}
+    {% endif %}
+
     <div class="region-content">
 
       {% if pagetitle %}
         <h1 class='page-title'>{{ pagetitle }}</h1>
       {% endif %}
-
-      {{ message|raw }}
 
       {{ content|raw }}
     </div> <!-- region-content -->
