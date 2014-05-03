@@ -77,7 +77,7 @@ class MY_AdminController extends MY_Controller {
         $this->data['message'] = "<div class='message error'>" . $this->session->flashdata('error_message')."</div>";
       }
 
-      $this->data['content'] = $this->twig->render('login_form' , $tmpData );
+      $this->data['content'] = $this->twig->render('panel/login_form' , $tmpData );
     } //validate_session
     else
     {

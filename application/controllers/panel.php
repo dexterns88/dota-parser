@@ -15,7 +15,7 @@ class Panel extends MY_AdminController {
 
   public function addnews()
   {
-    $this->titleSet('Create news');
+   $this->titleSet('Create news');
     $this->index();
   }
 
