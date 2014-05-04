@@ -87,7 +87,8 @@ class MY_AdminController extends MY_Controller {
         'image' => $this->user->get_custom_field('image')
       );
       $menu['item'] = array(
-          'Add news' => 'addnews'
+          'Add news' => 'addnews',
+          'delete news' => 'newsdelete'
       );
       $this->data['submenu'] = $this->twig->render('panel/admin_menu' , $menu);
     }

@@ -1,0 +1,24 @@
+{% import "macro/macro_form.twig" as forms %}
+<form action="{{ url }}" method="POST">
+
+  {%
+    set param = {
+      labelBefore: 'Title: <span class="required">*</span>',
+      size: 30,
+      value: title
+    }
+  %}
+  {{ forms.input( 'title' , 'text' , param ) }}
+
+  {%
+    set param = {
+      labelBefore: 'Text: <span class="required">*</span>',
+      description: 'Enter text for news',
+      text: newstext
+    }
+  %}
+  {{ forms.textarea( 'newstext' , param ) }}
+
+  {{ forms.submit( 'create' , 'submit' , 'Create news' , 'form-action' , 'form-submit' ) }}
+
+</form>

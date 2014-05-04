@@ -29,7 +29,7 @@ class News_modal extends CI_Model {
       $limit = "LIMIT {$settings['limit']['start']} , {$settings['limit']['count']}";
     }
 
-    $sql = "SELECT {$row} from news {$limit}";
+    $sql = "SELECT {$row} from news ORDER BY date DESC {$limit}";
 
     $query = $this->db->query($sql);
 
@@ -46,6 +46,27 @@ class News_modal extends CI_Model {
     $this->db->close();
     
     return $out;
+  }
+
+  function create( $title , $text , $time )
+  {
+    $input['title'] = $this->db->escape($title);
+    $input['text'] = $this->db->escape($text);
+
+    $row = "title , date , text";
+    $value = " {$input['title']} , '{$time}' , {$input['text']} ";
+
+    $sql = "INSERT INTO news( {$row} )VALUES({$value})";
+    $query = $this->db->query($sql);
+    $this->db->close();
+    return $query;
+  }
+
+  function delete( $id )
+  {
+    $sql = "DELETE FROM news WHERE id={$id}";
+    $query = $this->db->query($sql);
+    return $query;
   }
 
 }

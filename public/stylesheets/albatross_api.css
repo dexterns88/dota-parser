@@ -2368,6 +2368,10 @@ h4 small,
 .message.error {
   color: #c13932;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_typography_res\.scss}line{font-family:\00003106}}
+.message.status {
+  color: #0B881E;
+}
 
 @media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_layout_res\.scss}line{font-family:\000033}}
 html.no-js body:before {
