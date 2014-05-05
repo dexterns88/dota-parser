@@ -27,8 +27,17 @@
 
   {%
     set param = {
+      labelBefore: 'Message: '
+    }
+  %}
+
+  {{ forms.textarea('messages' , param ) }}
+
+
+  {%
+    set param = {
       labelBefore: 'Upload file: ',
-      description: 'allowed files for uploads are w3g'
+      description: '<p>Allowed files for uploads are w3g</p><p>You can attach file if you have problem with upload for parsing</p>'
     }
   %}
   {{ forms.input('file_upload','file' , param ) }}

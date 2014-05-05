@@ -66,6 +66,7 @@ class Contact extends MY_Controller {
         <p><b>First/Last name:</b> {$POST['name']} </p>
         <p><b>Subject:</b> {$POST['subject']} </p>
         <p><b>Email:</b> {$POST['email']}</p>
+        <p><b>Message:</b> {$POST['messages']}</p>
       ";
 
       $this->email->from('dota@elitearea.org', 'Dota parser');
