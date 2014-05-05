@@ -2181,9 +2181,10 @@ Input and select
 Label
  */
 /* api core */
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\000036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\000037}}
 form textarea,
 form select,
+form input[type="email"],
 form input[type="text"],
 form input[type="password"] {
   margin: 5px 0;
@@ -2192,40 +2193,40 @@ form input[type="password"] {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000315}}
 form input[type="submit"] {
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000319}}
 form label {
   display: inline-block;
   line-height: normal;
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000323}}
 form label input[type="text"] {
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000329}}
 form fieldset {
   border: 1px solid #D8D8D8;
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000332}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000333}}
 form fieldset legend {
   padding: 4px 7px;
   text-transform: capitalize;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000343}}
 form .form-item.inline {
   display: inline-block;
   vertical-align: top;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000350}}
 form .inline-wrapper {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/c\:\/wamp\/www\/elitearea_dev\/dota\/public\/sass\/albatross_api\/core\/api_reset\/_form_res\.scss}line{font-family:\0000353}}
 form .inline-wrapper * {
   text-align: left;
 }

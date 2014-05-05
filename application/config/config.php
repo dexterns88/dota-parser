@@ -363,4 +363,5 @@ $config['proxy_ips'] = '';
 /* myconfig */
 //$config['storage'] = 'storage/';
 
-$config['storage'] = 'storage/';
+$config['storage'] = 'storage/replay/';
+$config['mailstorage'] = 'storage/email/';

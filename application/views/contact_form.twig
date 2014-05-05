@@ -1,0 +1,43 @@
+{% import "macro/macro_form.twig" as forms %}
+
+<form enctype="multipart/form-data" action="{{ url }}" method="POST">
+
+  {%
+    set param = {
+      labelBefore: 'First and Last name: ',
+      size: 30
+    }
+  %}
+  {{ forms.input( 'name' , 'text' , param ) }}
+
+  {%
+    set param = {
+      labelBefore: 'Subject: '
+    }
+  %}
+  {{ forms.input('subject','text' , param) }}
+
+  {%
+    set param = {
+      labelBefore: 'Email address: '
+    }
+  %}
+
+  {{ forms.input('email','email' , param ) }}
+
+  {%
+    set param = {
+      labelBefore: 'Upload file: ',
+      description: 'allowed files for uploads are w3g'
+    }
+  %}
+  {{ forms.input('file_upload','file' , param ) }}
+
+
+
+  {{ forms.submit('send' , 'submit' , 'send email' , 'form-action' , 'form-submit' ) }}
+
+</form>
+<div class="info">
+  <p> If you have some question or problem with upload you can contact us to ask for help! </p>
+</div>
