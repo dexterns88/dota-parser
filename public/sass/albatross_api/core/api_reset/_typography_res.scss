@@ -98,13 +98,18 @@ h4 small,
   
   margin: 10px 0 15px;
   text-align: center;
-  
+  border-bottom: 1px solid transparent;
+  padding-bottom: 10px;
+  @include box-shadow(0 1px 0 rgba(255, 255, 255, 0.2));
+
   &.error {
     color: #c13932;
+    border-bottom-color: #c13932; 
   }
 
   &.status {
     color: #0B881E;
+    border-bottom-color: #0B881E;
   }
 
 }

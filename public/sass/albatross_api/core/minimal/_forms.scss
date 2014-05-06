@@ -27,9 +27,11 @@ form {
 		color: $minimal_descColor;
 	}
 
+	input[type="email"],
 	input[type="text"],
 	select {
 		border: $minimal_formItemsBorder;
+		width: 100%;
 	}
 
 	.form-item {

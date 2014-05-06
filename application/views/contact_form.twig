@@ -1,6 +1,6 @@
 {% import "macro/macro_form.twig" as forms %}
 
-<form enctype="multipart/form-data" action="{{ url }}" method="POST">
+<form class="contact-form" enctype="multipart/form-data" action="{{ url }}contact" method="POST">
 
   {%
     set param = {
@@ -48,5 +48,6 @@
 
 </form>
 <div class="info">
-  <p> If you have some question or problem with upload you can contact us to ask for help! </p>
+  <p>If you have some question or problem with upload you can contact us to ask for help! </p>
+  <p>If you have problem with upload file you can send file to us and we will fix bug soon as possible!</p>
 </div>

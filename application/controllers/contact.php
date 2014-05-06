@@ -12,11 +12,12 @@ class Contact extends MY_Controller {
     $this->data['title'] = "Contact";
     $this->data['pagetitle'] = "Contact us";
 
-    $this->data['content'] = $this->twig->render('contact_form');
+    $this->data['content'] = $this->twig->render('contact_form' , $this->data );
 
     if(isset($_POST['send'])) {
 
       $uploadFlag = true;
+      $formItem = true;
 
       $this->load->library('email');
       $this->load->helper('file');
@@ -34,6 +35,12 @@ class Contact extends MY_Controller {
 
     // put post in variable
       $POST = $_POST;
+
+      if( empty($POST['name']) && empty($POST['subject']) && empty($POST['email']) && empty($POST['messages']) )
+      {
+        $uploadFlag = false;
+        $formItem = false;
+      }
 
       if( $_FILES['file_upload']['error'] == 4 )
       {
@@ -91,7 +98,13 @@ class Contact extends MY_Controller {
         {
           unlink( $uploaded_file['full_path'] );
         }
-
+      }
+      else
+      {
+        if( $uploadFlag == false && $formItem == false )
+        {
+          $this->data['message'] = "<div class='message error'>You can't send empty form!</div>";
+        }
       }
 
     }
