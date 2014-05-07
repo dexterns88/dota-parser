@@ -14,6 +14,8 @@ class Contact extends MY_Controller {
 
     $this->data['content'] = $this->twig->render('contact_form' , $this->data );
 
+    $this->data['keywords'] = ',contact page,dota feedback';
+
     if(isset($_POST['send'])) {
 
       $uploadFlag = true;

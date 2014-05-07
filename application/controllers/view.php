@@ -19,6 +19,8 @@ class View extends MY_Controller {
     $this->load->model('save_replay');
     $this->data['pagetitle'] = "Replay list";
 
+    $this->data['keywords'] = ',dota preview replay,dota player analitics,game analitics';
+
     $query_pagination['page'] = $i;
     $query_pagination['item_per_page'] = $this->itemsPager;
 

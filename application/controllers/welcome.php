@@ -12,6 +12,8 @@ class Welcome extends MY_Controller {
 
     $this->data['body_class'] = "front";
 
+    $this->data['keywords'] = ',dota home';
+
   //home page view
     $query_pagination['page'] = 0;
     $query_pagination['item_per_page'] = 5;

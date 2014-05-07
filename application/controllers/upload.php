@@ -8,6 +8,8 @@ class Upload extends MY_Controller {
   public function index()
   {
     $this->data['pagetitle'] = "Upload replay";
+    $this->data['keywords'] = ',upload dota replay';
+
     $this->data['content'] = $this->twig->render('upload_form' , $this->data );
     $this->twig->display('main_tpl' , $this->data );
   }

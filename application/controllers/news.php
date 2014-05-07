@@ -13,6 +13,8 @@ class News extends MY_Controller {
   public function page( $i = 0 ){
     $this->data['title'] = "News";
 
+    $this->data['keywords'] = ',dota news';
+
     $this->load->library('pagination');
     $this->load->model('news_modal');
 
