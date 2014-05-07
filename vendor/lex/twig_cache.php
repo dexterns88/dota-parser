@@ -4,11 +4,27 @@ echo 'Clearing template cache...';
 
 basePath();
 
-
 switch( $argv[2] ) {
   case 'all':
     clearCache();
     break;
+  case 'rebuild':
+    rebuildtheme();
+    break;
+  default:
+    commandList();
+  
+}
+
+function rebuildtheme() {
+  include_once('config.php');
+  $handle = curl_init();
+  curl_setopt( $handle, CURLOPT_URL, $config['weburl'] );
+  curl_setopt( $handle, CURLOPT_HEADER, false );
+  curl_exec( $handle );
+  curl_close( $handle );
+  
+  echo "rebuilded";
 }
 
 function clearCache() {
@@ -45,4 +61,12 @@ function deleteDir($dirPath) {
   }
   echo $emptycheck;
   
+}
+
+function commandList() {
+  $print = "\n Wrong command call. Supporet list";
+  $print .= "\n\n  lex cc all -> clear all twig cache";
+  $print .= "\n  lex cc rebuild -> rebuild theme and prepare cache file.";
+  
+  echo $print;
 }
