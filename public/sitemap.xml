@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="URf-8" ?>
+<urlset
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <url>
+        <loc>http://www.w3xsilvercloud.com/</loc>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>http://www.w3xsilvercloud.com/upload</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>http://www.w3xsilvercloud.com/view/page</loc>
+        <changefreq>always</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>http://www.w3xsilvercloud.com/news/page</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>http://www.w3xsilvercloud.com/contact</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>
