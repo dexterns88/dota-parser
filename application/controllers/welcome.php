@@ -13,6 +13,7 @@ class Welcome extends MY_Controller {
     $this->data['body_class'] = "front";
 
     $this->data['keywords'] = ',dota home';
+    $this->data['title'] = 'HOME / w3xSilverCloud';
 
   //home page view
     $query_pagination['page'] = 0;

@@ -19,6 +19,7 @@ class View extends MY_Controller {
     $this->load->model('save_replay');
     $this->data['pagetitle'] = "Replay list";
 
+    $this->data['title'] = 'Save listing / w3xSilverCloud';
     $this->data['keywords'] = ',dota preview replay,dota player analitics,game analitics';
 
     $query_pagination['page'] = $i;
@@ -30,8 +31,6 @@ class View extends MY_Controller {
 
     $this->pagination->initialize($config);
     $query['pagination'] = $this->pagination->create_links();
-
-    $this->data['title'] = 'Save listing';
 
     $this->data['content'] = $this->twig->render('list_view' , $query );
     $this->twig->display('main_tpl' , $this->data );
@@ -76,7 +75,7 @@ class View extends MY_Controller {
 
   public function save($i)
   {
-    $this->data['title'] = "Replay details";
+    $this->data['title'] = 'Replay details / w3xSilverCloud';
 
     array_push( $this->data['jsplugin'] , "/script/jquery.mCustomScrollbar.min.js" );
     array_push( $this->data['jsplugin'] , "/script/jquery.mousewheel.min.js" );

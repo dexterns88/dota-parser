@@ -9,6 +9,7 @@ class Upload extends MY_Controller {
   {
     $this->data['pagetitle'] = "Upload replay";
     $this->data['keywords'] = ',upload dota replay';
+    $this->data['title'] = 'Upload / w3xSilverCloud';
 
     $this->data['content'] = $this->twig->render('upload_form' , $this->data );
     $this->twig->display('main_tpl' , $this->data );

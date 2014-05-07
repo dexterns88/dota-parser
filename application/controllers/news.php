@@ -11,7 +11,7 @@ class News extends MY_Controller {
   }
 
   public function page( $i = 0 ){
-    $this->data['title'] = "News";
+    $this->data['title'] = 'News / w3xSilverCloud';
 
     $this->data['keywords'] = ',dota news';
 

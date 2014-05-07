@@ -9,7 +9,7 @@
 class Contact extends MY_Controller {
 
   public function index() {
-    $this->data['title'] = "Contact";
+    $this->data['title'] = 'Contact us / w3xSilverCloud';
     $this->data['pagetitle'] = "Contact us";
 
     $this->data['content'] = $this->twig->render('contact_form' , $this->data );
