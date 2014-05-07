@@ -4,10 +4,18 @@ class MY_Controller extends CI_Controller {
 
   protected $data = array();
   protected $storage;
+  protected $admin;
 
   function __construct()
   {
     parent::__construct();
+
+    //$this->load->spark('google-analytics-lib/x.x.x');
+
+    if( ! isset($this->admin) )
+    {
+      $this->load->spark('google-analytics-lib/2.0.0');
+    }
 
     $this->data['jsplugin'] = array();
 
@@ -16,6 +24,12 @@ class MY_Controller extends CI_Controller {
 
     $this->load->spark('krumo/0.0.1');
     $this->load->spark('twig/0.0.1');
+
+    if( defined('ganalytics') ) {
+      $this->data['analitics'] = ganalytics;
+    }
+
+
 
     $this->data['url'] = base_url();
 
@@ -54,6 +68,8 @@ class MY_AdminController extends MY_Controller {
 
   function __construct()
   {
+    $this->admin = true;
+
     parent::__construct(); // init parent
     $this->load->library( array('users/user','users/user_manager') );
     $this->load->helper('security');
