@@ -1,0 +1,9 @@
+/* TEAM */
+Your title: Dejan Dudukovic
+Site: http://www.webpage-lab.com
+Location: Novi Sad , Serbia
+
+/* SITE */
+Last update: 2014/05/14
+Standards: HTML5, CSS3, jQuery
+Components: jQuery, SASS , compass , php
