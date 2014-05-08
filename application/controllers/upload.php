@@ -50,43 +50,53 @@ class Upload extends MY_Controller {
       $uploaded_file = $this->upload->data();
       $this->reshine->replay( $uploaded_file['full_path'] );
 
-      $model_date['saver'] = $this->reshine->game['saver_name'];
-      $model_date['title'] = $_POST['replay_title'];
-      $model_date['time'] = $time;
-      $model_date['link'] = $uploaded_file['orig_name'];
+      $insertRes = false;
+      if( $this->reshine->extra['parsed'] )
+      {
+        $model_date['saver'] = $this->reshine->game['saver_name'];
+        $model_date['title'] = $_POST['replay_title'];
+        $model_date['time'] = $time;
+        $model_date['link'] = $uploaded_file['orig_name'];
 
-      $this->reshine->extra['title'] = $model_date['title'];
+        $this->reshine->extra['title'] = $model_date['title'];
 
-      if( "Automatic" != $postData['replay_winner'] ) {
-        $this->reshine->extra['winner'] = ( $postData['replay_winner'] == "Sentinel" ? "Sentinel" : "Scourge" );
+        if( "Automatic" != $postData['replay_winner'] ) {
+          $this->reshine->extra['winner'] = ( $postData['replay_winner'] == "Sentinel" ? "Sentinel" : "Scourge" );
+        }
+        else if(isset( $this->reshine->extra['parsed_winner'])) {
+          $this->reshine->extra['winner'] = $this->reshine->extra['parsed_winner'];
+        }
+        else {
+          $this->reshine->extra['winner'] = "Unknown";
+        }
+
+        $this->reshine->extra['text'] = $postData['replay_text'];
+        $this->reshine->extra['original_filename'] = $uploaded_file['file_name'];
+
+        $txtFile = $uploaded_file['file_path'] . $uploaded_file['raw_name'] . ".txt";
+        $origin = $uploaded_file['file_path'] . $uploaded_file['raw_name'] . ".w3g";
+
+        $output = $this->theme_view->render( $this->reshine , $uploaded_file['raw_name'] );
+
+        $test = write_file( $txtFile , serialize( $output ) );
+
+        $insertRes = $this->save_replay->insert($model_date);
       }
-      else if(isset( $this->reshine->extra['parsed_winner'])) {
-        $this->reshine->extra['winner'] = $this->reshine->extra['parsed_winner'];
-      }
-      else {
-        $this->reshine->extra['winner'] = "Unknown";
-      }
-
-      $this->reshine->extra['text'] = $postData['replay_text'];
-      $this->reshine->extra['original_filename'] = $uploaded_file['file_name'];
-
-      $txtFile = $uploaded_file['file_path'] . $uploaded_file['raw_name'] . ".txt";
-      $origin = $uploaded_file['file_path'] . $uploaded_file['raw_name'] . ".w3g";
-
-      $output = $this->theme_view->render( $this->reshine , $uploaded_file['raw_name'] );
-
-      $test = write_file( $txtFile , serialize( $output ) );
-
-      $insertRes = $this->save_replay->insert($model_date);
 
       if($insertRes == false )
       {
         $file_save = $config['upload_path'] . $uploaded_file['file_name'];
-        $file_txt = $config['upload_path'] . $uploaded_file['raw_name'] . ".txt";
+        //$file_txt = $config['upload_path'] . $uploaded_file['raw_name'] . ".txt";
         unlink( $file_save );
-        unlink( $file_txt );
+        //unlink( $file_txt );
 
-        $this->data['message'] = "<div class='message error'>error with uploading replay please contact us to report issues</div>";
+        $res_error = "";
+        if ( defined('reshine_error') ) {
+          $res_error = reshine_error;
+        }
+
+        $this->data['message'] = "<div class='message error'>Error with uploading replay please contact us to report issues <br/> {$res_error} </div>";
+
         $this->index();
       }
       else

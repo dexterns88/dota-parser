@@ -67,7 +67,8 @@ function getMapName($mapName, &$dota_major, &$dota_minor) {
         }
         // If no file is found use the default, but only allow 6.59 or newer.
         else if ( $dota_major < 6 || ( $dota_major == 6 && $dota_minor < 59 ) ) {
-            echo "Unsupported version of Dota.";
+            //$GLOBALS['reshine_error'] = "Unsupported version of Dota.";
+            define('reshine_error' , 'Unsupported version of Dota.');
             return false;
         }
         else {
