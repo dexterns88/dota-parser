@@ -23,20 +23,29 @@ class Download extends My_Controller { //CI_Controller {
       show_404();
     }
 
+    set_time_limit(0);
+    ignore_user_abort(false);
+    ini_set('output_buffering', 0);
+    ini_set('zlib.output_compression', 0);
+
     $this->file = $this->storage . $files;
 
     if ( file_exists($this->file) )
     {
       header('Content-Description: File Transfer');
-      header('Content-Type: application/octet-stream');
+      header('Content-Type:application/octet-stream');
       header('Content-Disposition: attachment; filename='.basename($this->file));
       header('Expires: 0');
       header('Cache-Control: must-revalidate');
+      header("Content-Transfer-Encoding: binary\n");
       header('Pragma: public');
       header('Content-Length: ' . filesize($this->file));
+      header('Connection:close');
+     
       ob_clean();
       flush();
-      readfile($file);
+      readfile($this->file);
+
       exit;
     } else {
       $this->data['content'] = "<h1>Not found</h1>";
