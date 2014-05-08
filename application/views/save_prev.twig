@@ -1,5 +1,5 @@
 <h1 class="page-title">{{ replay.title }}</h1>
-
+{{ krumo(replay) }}
 <div class="replay-details">
 
   <div class="game-info">
@@ -171,6 +171,15 @@
 
 
   </div> <!-- teams -->
+
+  {% if replay.description %}
+  <div class="description-block">
+    <h2>Description</h2>
+    <div class="content">
+      {{ replay.description }}
+    </div>
+  </div>
+  {% endif %}
 
   <div class="chat">
 
