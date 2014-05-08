@@ -34,9 +34,9 @@
           <div class="posted"><i class="fa fa-clock-o"></i> {{ news.date|date("m/d/Y H:m") }} </div>
           <div class="content">
             {% if view == 'full' %}
-              {{ news.text }}
+              {{ news.text|raw }}
             {% else  %}
-              {{ news.text|slice(0,125) }}...
+              {{ news.text|slice(0,125) }}
             {% endif %}
           </div>
         </div>

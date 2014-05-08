@@ -1,5 +1,5 @@
 <nav class="main-nav">
   {% for item in items %}
-    <a {% if curentUrl == item.url %} class="active" {% endif %} href="{{ item.url }}">{{ item.title }}</a>
+    <a {% if curentUrl == item.url %} class="active" {% endif %} href="{{ item.url }}" {% if item.target %} target="{{ item.target }}" {% endif %}>{{ item.title }}</a>
   {% endfor %}
 </nav>
