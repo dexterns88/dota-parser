@@ -46,7 +46,7 @@ class MY_Controller extends CI_Controller {
       2 => array( "url" => "/view" , "title" => "Replay database"),
       3 => array( "url" => "/news" , "title" => "News"),
       4 => array( "url" => "/contact" , "title" => "Contact"),
-      5 => array( "url" => "https://github.com/dexterns88/w3xsilvercloude/issues?milestone=1&state=closed" , "title" => "Report issue" , "target" => "_blank")
+      5 => array( "url" => "https://github.com/dexterns88/w3xsilvercloude/issues?state=closed" , "title" => "Report issue" , "target" => "_blank")
     );
 
     //render menu
