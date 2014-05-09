@@ -220,6 +220,7 @@
   {% set rows = settings.rows|default(4) %}
   {% set cols = settings.cols|default(30) %}
   {% set text = settings.text %}
+  {% set fieldclass = settings.fieldclass %}
   {% set description = settings.description %}  {# description -> description field #}
 
   {% set labelBe = settings.labelBefore %} {# labelBefore -> label #}
@@ -236,7 +237,7 @@
       </label>
     {% endif %}
 
-    <textarea name="{{ name }}" class="form-textarea" rows="{{ rows }}" cols="{{ cols }}">{% if text %}{{ text }}{% endif %}</textarea>
+    <textarea name="{{ name }}" class="form-textarea {{ fieldclass }}" rows="{{ rows }}" cols="{{ cols }}">{% if text %}{{ text }}{% endif %}</textarea>
 
   {# set label after region #}
     {% if labelAf %}

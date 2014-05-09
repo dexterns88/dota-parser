@@ -14,7 +14,8 @@
     set param = {
       labelBefore: 'Text: <span class="required">*</span>',
       description: 'Enter text for news',
-      text: newstext
+      text: newstext,
+      fieldclass: 'ck-editor'
     }
   %}
   {{ forms.textarea( 'newstext' , param ) }}
