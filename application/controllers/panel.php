@@ -32,7 +32,7 @@ class Panel extends MY_AdminController {
 
       if ($this->form_validation->run() == FALSE)
       {
-        $this->data['message'] = "<div class='error message'>" . validation_errors() . "</div>";
+        $this->data['message'] = writeMessage( validation_errors() , 'error');
         $field['title'] = set_value('title');
         $field['newstext'] = set_value('newstext');
       }
@@ -43,11 +43,11 @@ class Panel extends MY_AdminController {
         $query = $this->news_modal->create( $POST['title'] , $POST['newstext'] , $time );
         if ( $query )
         {
-          $this->data['message'] = "<div class='message status'>News successfully created!</div>";
+          $this->data['message'] = writeMessage( "News successfully created!" , "status");
         }
         else
         {
-          $this->data['message'] = "<div class='message error'>Something wrong please trt again or contact system administrator</div>";
+          $this->data['message'] = writeMessage("Something wrong please trt again or contact system administrator" , "error");
         }
       }
       $this->data['content'] = $this->twig->render('panel/create_news' , $field);
@@ -96,7 +96,7 @@ class Panel extends MY_AdminController {
     $id = intval($id);
 
     if( $id == 0 ){
-      $this->data['message'] = "<div class='error message'>undefined news id</div>";
+      $this->data['message'] = writeMessage( "undefined news id" , "status");
       $this->index();
       return false;
     }
@@ -107,11 +107,11 @@ class Panel extends MY_AdminController {
       $q = $this->news_modal->delete($id);
       if($q)
       {
-        $this->data['message'] = "<div class='status message'>News successfully deleted</div>";
+        $this->data['message'] = writeMessage("News successfully deleted","status");
       }
       else
       {
-        $this->data['message'] = "<div class='error message'>Something wrong please try again</div>";
+        $this->data['message'] = writeMessage("Something wrong please try again" , "error");
       }
     }
     else

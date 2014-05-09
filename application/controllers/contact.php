@@ -58,7 +58,7 @@ class Contact extends MY_Controller {
       {
         if( ! $this->upload->do_upload('file_upload') )
         {
-          $this->data['message'] = "<div class='message error'>" . $this->upload->display_errors() . "</div>";
+          $this->data['message'] = writeMessage( $this->upload->display_errors() , 'error');
           $uploadFlag = false;
         }
         else
@@ -89,11 +89,11 @@ class Contact extends MY_Controller {
       {
         if( $this->email->send() )
         {
-          $this->data['message'] = "<div class='message status'>Email successfully sent!</div>";
+          $this->data['message'] = writeMessage("Email successfully sent!" , 'status');
         }
         else
         {
-          $this->data['message'] = "<div class='message error'>Something wrong with sending email please try later!</div>";
+          $this->data['message'] = writeMessage( "Something wrong with sending email please try later!" , "error" );
         }
 
         if ( $isFile )
@@ -105,7 +105,7 @@ class Contact extends MY_Controller {
       {
         if( $uploadFlag == false && $formItem == false )
         {
-          $this->data['message'] = "<div class='message error'>You can't send empty form!</div>";
+          $this->data['message'] = writeMessage( "You can't send empty form!" , "error" );
         }
       }
 

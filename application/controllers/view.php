@@ -96,7 +96,7 @@ class View extends MY_Controller {
     }
     else
     {
-      $this->data['message'] = "<div class='message error'>File doesn't exist</div>";
+      $this->data['message'] = writeMessage("File doesn't exist","error");
     }
 
     if( isset($replay) ) {
