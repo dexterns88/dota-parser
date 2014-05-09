@@ -98,6 +98,10 @@ class MY_AdminController extends MY_Controller {
     } //validate_session
     else
     {
+
+      //add ckeditor js
+      array_push( $this->data['jsplugin'] , "/script/ck/ckeditor.js" , "/script/ck/adapters/jquery.js" ,  "/script/ckbuild.js" );
+
       $this->data['user'] = array(
         'username'=> $this->user->get_login(),
         'id' => $this->user->get_id(),
