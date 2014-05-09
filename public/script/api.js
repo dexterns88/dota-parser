@@ -12,9 +12,66 @@
 
     $('.replay_list .pager').ajaxView();
 
+    
+    if( $.chatPlayerSelect ) {
+      $('.chat .content li').chatPlayerSelect();
+    }
+
 	});
 
 //plugin
+
+$.chatPlayerSelect = function( element , options ) {
+  
+  var settings = {};
+  element.data('chatPlayerSelect' , this);
+  var storage = false;
+  var activeClass = "jsSelected";
+  obj = this;
+
+  this.init = function( options ) {
+    
+    this._atachEvent();
+      
+  };
+
+  this._atachEvent = function() {
+    element.on('click',function(){
+      
+      if( $(this).hasClass(activeClass)) {
+        obj._removeClass();
+      } else {
+        obj._addClass( $(this) );  
+      }
+      
+    });
+  };
+  
+  this._removeClass = function() {
+    storage.removeClass(activeClass);
+  }
+
+  this._addClass = function(el) {
+    
+    if( storage != false ) {
+      storage.removeClass( activeClass );
+    }
+
+    var tmpClass = "." + el.attr('class');
+    storage = element.parent().children(tmpClass);
+    storage.addClass( activeClass );
+
+  };
+
+  this.init( options );
+};
+
+$.fn.chatPlayerSelect = function(options) {
+  return this.each(function() {
+    (new $.chatPlayerSelect($(this), options));
+  });        
+};
+
 
 $.heroExpand = function( element ) {
 	

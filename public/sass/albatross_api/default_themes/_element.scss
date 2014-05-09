@@ -291,7 +291,8 @@
 .chat {
 	
 	.content {
-		background-color: #fff;
+		background-color: #171717;
+		color: #fff;
 		border: 2px solid #303030;
 		max-height: 360px;
 		height: 360px;
@@ -304,9 +305,16 @@
 	}
 
 	ul li {
-		padding: 6px 5px;
-		border-top: 1px solid #9D9D9D;
+		padding: 1px 5px;
+		//border-top: 1px solid #9D9D9D;
 		
+		&.jsSelected {
+			background-color: #333333;
+		}
+		&:hover {
+			background-color: #252525;
+		}
+
 		&:first-child {
 			border-top: none;
 		}

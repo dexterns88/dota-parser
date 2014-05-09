@@ -186,11 +186,15 @@
 
     <h2>Chat</h2>
 
+    <div class="description">
+      <p>Click on user if you wish to highlight all user chat</p>
+    </div>
+
     <div class="content default-skin">
       <ul class="unlist">
         {% for message in replay.chat %}
-          <li>
-            <span class="time">{{ message.time }}</span>
+          <li class="player-{{ message.user.name|replace({'.':'' , '#':'' , ' ':''}) }}">
+            <span class="time">{{ message.time }} {{ message.mode }} </span>
             <span style="color: {{ message.user.color }} " class="player"> {{ message.user.name }} </span> :
             <span class="message"> {{ message.text }}</span>
           </li>
