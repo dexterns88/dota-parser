@@ -188,7 +188,27 @@
 
     <div class="description">
       <p>Click on user if you wish to highlight all user chat</p>
-    </div>
+    </div> <!-- filter -->
+
+    <div class="filter js-only">
+      <form action="javascript:;">
+        <p><h4>Filter:</h4> <label> <input class="form-checkbox show-all" type="checkbox" name="player" value="all" /> Show all player </label> </p>
+        {% for key , team in replay.teams %}
+          <div class="team">
+            {# write team name fitler: #}
+            {% if key == 0 %} <label>Sentinel:</label> {% else %} <label>Scourge:</label> {% endif %}
+
+            {% for player in team %}
+              {% set pnf = player.player_name|replace({'.':'' , '#':'' , ' ':''}) %}
+              <label>
+                <input class="form-checkbox" type="checkbox" name="player" value="{{ pnf }}">{{ player.player_name }}
+              </label>
+            {% endfor %}
+
+          </div> <!-- /team -->
+        {% endfor %}
+      </form>
+    </div> <!-- filter -->
 
     <div class="content default-skin">
       <ul class="unlist">

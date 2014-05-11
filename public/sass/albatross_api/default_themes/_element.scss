@@ -472,6 +472,36 @@ body.page404 {
 
 .admin_menu {
 	
+	background-color: #292D30;
+
+	ul {
+		margin-left: 4px;
+		li {
+			list-style: none;
+			display: inline-block;
+			border-right: 1px solid #000;
+			margin-left: -4px;
+			padding: 0 3px;
+			@include box-shadow(rgba(255,255,255,0.1) 1px 0px 0px);
+			&:first-child {
+				border-left: 1px solid #000;
+			}
+		}
+	}
+
+	a {
+		display: inline-block;
+		padding: 7px 12px;
+		border-bottom: 1px solid transparent;
+		@include border-radius( 0 0 5px 5px);
+
+		&:hover {
+			text-decoration: none;
+			border-bottom-color: #D9F4FF;
+		}
+
+	}
+
 }
 
 

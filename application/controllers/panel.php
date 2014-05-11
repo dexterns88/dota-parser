@@ -30,26 +30,30 @@ class Panel extends MY_AdminController {
 
       $field = array();
 
-      if ($this->form_validation->run() == FALSE)
+      if(isset($_POST['create']))
       {
-        $this->data['message'] = writeMessage( validation_errors() , 'error');
-        $field['title'] = set_value('title');
-        $field['newstext'] = set_value('newstext');
-      }
-      else
-      {
-        $time = time();
-        $POST = $_POST;
-        $query = $this->news_modal->create( $POST['title'] , $POST['newstext'] , $time );
-        if ( $query )
+        if ($this->form_validation->run() == FALSE)
         {
-          $this->data['message'] = writeMessage( "News successfully created!" , "status");
+          $this->data['message'] = writeMessage( validation_errors() , 'error');
+          $field['title'] = set_value('title');
+          $field['newstext'] = set_value('newstext');
         }
         else
         {
-          $this->data['message'] = writeMessage("Something wrong please trt again or contact system administrator" , "error");
+          $time = time();
+          $POST = $_POST;
+          $query = $this->news_modal->create( $POST['title'] , $POST['newstext'] , $time );
+          if ( $query )
+          {
+            $this->data['message'] = writeMessage( "News successfully created!" , "status");
+          }
+          else
+          {
+            $this->data['message'] = writeMessage("Something wrong please trt again or contact system administrator" , "error");
+          }
         }
-      }
+      } // end if posted
+
       $this->data['content'] = $this->twig->render('panel/create_news' , $field);
     }
     else

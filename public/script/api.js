@@ -3,7 +3,11 @@
 
 	$(window).load(function(){
 		if( jQuery().mCustomScrollbar ){
-			$(".chat .content").mCustomScrollbar();
+			$(".chat .content").mCustomScrollbar({
+        advanced: {
+          updateOnContentResize: true
+        }
+      });
 		}
   });
 
@@ -17,9 +21,86 @@
       $('.chat .content li').chatPlayerSelect();
     }
 
+    if( $.chatFilters ) {
+      $('.filter').chatFilters();
+    }
+
 	});
 
 //plugin
+
+$.chatFilters = function( element , options ) {
+  
+  var settings = {};
+  element.data('chatFilters' , this);
+  var obj = this;
+  var items , showAll;
+
+  this.init = function( options ) {
+    settings = $.extend( {} , $.chatFilters.defaultOptions , options );
+    
+    this._setup();
+    this._atachEvent();
+    
+  };
+  
+  this._setup = function() {
+    items = element.find( '.team ' + settings.items );
+    showAll = element.find('.show-all');
+    target = $(settings.target);
+  };
+
+  this._atachEvent = function() {
+    
+    showAll.on('change' , function() {
+      if( this.checked ) {
+        items.prop('checked' , false);
+        target.show();
+        $(this).prop('disabled', true );
+      }
+
+    });
+
+    items.on('change' , function() {
+
+      var cl = ".player-" + $(this).val();
+
+      if( this.checked ) {
+        if( showAll.is(':checked') ) {
+          showAll.prop({ 'checked':false , 'disabled': false });
+          target.hide();
+        }
+        target.parent().find( cl ).show();
+      } else {
+        
+        if( items.is(':checked') ) {
+          target.parent().find( cl ).hide();
+        } else {
+          target.show();
+          showAll.prop({ 'checked': true , 'disabled': true });
+        }
+
+      }
+      
+    });
+
+  };
+
+  this.init( options );
+};
+
+
+$.chatFilters.defaultOptions = {
+  items: '.form-checkbox',
+  target: '.chat .content li'
+}
+
+
+$.fn.chatFilters = function(options) {
+  return this.each(function() {
+    (new $.chatFilters($(this), options));
+  });        
+};
 
 $.chatPlayerSelect = function( element , options ) {
   
