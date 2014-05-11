@@ -48,6 +48,10 @@ $.chatFilters = function( element , options ) {
     items = element.find( '.team ' + settings.items );
     showAll = element.find('.show-all');
     target = $(settings.target);
+
+    showAll.prop({ 'checked':true , 'disabled':'true' });
+    items.prop( 'checked', false )
+
   };
 
   this._atachEvent = function() {
