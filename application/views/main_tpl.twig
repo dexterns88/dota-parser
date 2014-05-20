@@ -19,6 +19,9 @@
 </head>
 <body {% if body_class %} class="{{ body_class }}" {% endif %}>
 
+
+  {{ adminmenu|raw }}
+
   <div class="page">
     {% if user %}
       {% include 'panel/user_head.twig' with user %}

@@ -66,6 +66,7 @@ class MY_AdminController extends MY_Controller {
 
   private $username;
   private $password;
+  protected $validate = false;
 
   function __construct()
   {
@@ -79,26 +80,15 @@ class MY_AdminController extends MY_Controller {
 
     if( ! $this->user->validate_session() )
     {
-      $this->data['pagetitle'] = 'Login to panel';
-      if( isset($_POST['login'] ) || isset($_POST['enter']) )
+      if( $tmpData['url'] != '/panel/login' )
       {
-        $this->username = encode_php_tags($_POST['username']);
-        $this->password = encode_php_tags($_POST['pass']);
-        $this->user->login( $this->username , $this->password );
-        redirect( $tmpData['url'] );
-
+        redirect('/panel/login');
       }
-
-      if( $this->session->flashdata('error_message') )
-      {
-        $this->data['message'] = "<div class='message error'>" . $this->session->flashdata('error_message')."</div>";
-      }
-
-      $this->data['content'] = $this->twig->render('panel/login_form' , $tmpData );
     } //validate_session
     else
     {
 
+      $this->validate = true;
       //add ckeditor js
       array_push( $this->data['jsplugin'] , "/script/ck/ckeditor.js" , "/script/ck/adapters/jquery.js" ,  "/script/ckbuild.js" );
 
@@ -107,11 +97,14 @@ class MY_AdminController extends MY_Controller {
         'id' => $this->user->get_id(),
         'image' => $this->user->get_custom_field('image')
       );
+
+      $menu['type'] = "main-admin";
       $menu['item'] = array(
-          'Add news' => 'addnews',
-          'delete news' => 'newsdelete'
+        'Panel' => '/panel/addnews',
+        'Dashboard' => '/dashboard'
       );
-      $this->data['submenu'] = $this->twig->render('panel/admin_menu' , $menu);
+      $this->data['adminmenu'] = $this->twig->render('panel/admin_menu' , $menu );
+
     }
 
   } //constructor

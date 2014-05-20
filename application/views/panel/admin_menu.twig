@@ -1,7 +1,7 @@
-<div class="admin_menu">
+<div class="admin_menu {{ type }}">
   <ul>
   {% for name , url in item %}
-    <li><a href="/panel/{{ url }}">{{ name }}</a></li>
+    <li><a href="{{ url }}">{{ name }}</a></li>
   {% endfor %}
   </ul>
 </div>

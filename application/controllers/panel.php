@@ -13,6 +13,16 @@ class Panel extends MY_AdminController {
 
   public function index()
   {
+    if( $this->user->validate_session() )
+    {
+      $menu['type'] = 'submenu';
+      $menu['item'] = array(
+        'Add news' => '/panel/addnews',
+        'delete news' => '/panel/newsdelete'
+      );
+      $this->data['submenu'] = $this->twig->render('panel/admin_menu' , $menu);
+    }
+
     $this->twig->display('main_tpl' , $this->data );
   }
 
@@ -130,6 +140,32 @@ class Panel extends MY_AdminController {
   public function logout()
   {
     $this->user->destroy_user('/');
+  }
+
+  public function login()
+  {
+      if( $this->user->validate_session() ) {
+        redirect('/panel');
+      }
+
+      $tmpData['url'] = "/" . uri_string();
+      $this->data['pagetitle'] = 'Login to panel';
+      if( isset($_POST['login'] ) || isset($_POST['enter']) )
+      {
+        $this->username = encode_php_tags($_POST['username']);
+        $this->password = encode_php_tags($_POST['pass']);
+        $this->user->login( $this->username , $this->password );
+        redirect( $tmpData['url'] );
+
+      }
+
+      if( $this->session->flashdata('error_message') )
+      {
+        $this->data['message'] = "<div class='message error'>" . $this->session->flashdata('error_message')."</div>";
+      }
+
+      $this->data['content'] = $this->twig->render('panel/login_form' , $tmpData );
+      $this->index();
   }
 
   private function pagerConf( $page )

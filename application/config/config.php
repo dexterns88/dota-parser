@@ -365,3 +365,9 @@ $config['proxy_ips'] = '';
 
 $config['storage'] = 'storage/replay/';
 $config['mailstorage'] = 'storage/email/';
+
+$config['parser'] = array(
+  'dota.allstars.v6.76.xml',
+  'dota.allstars.v6.74.xml',
+  'dota.allstars.v6.73.xml'
+);

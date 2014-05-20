@@ -11,14 +11,17 @@ class Upload extends MY_Controller {
     $this->data['keywords'] = ',upload dota replay';
     $this->data['title'] = 'Upload / w3xSilverCloud';
 
+    $this->data['parsers'] = $this->config->item('parser');
+
     $this->data['content'] = $this->twig->render('upload_form' , $this->data );
     $this->twig->display('main_tpl' , $this->data );
   }
 
   public function proced()
   {
-
     $this->load->model('save_replay');
+    $mapXml = $_POST['replay_parser'];
+    define("DEFAULT_XML_MAP", $mapXml );
 
     $this->load->helper( array( 'file' , 'date' ) );
     $time = time();

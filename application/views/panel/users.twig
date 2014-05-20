@@ -1,0 +1,26 @@
+<div class="user-list">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>User name</th>
+        <th>Activ</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+{% for user in users %}
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.login }}</td>
+      {% if user.active == true %}
+        <td>active</td>
+      {% else %}
+        <td>blocked</td>
+      {% endif %}
+      <td>{{ user.email }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+  </table>
+</div>
