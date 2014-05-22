@@ -3,7 +3,11 @@
 
 	$(window).load(function(){
 		if( jQuery().mCustomScrollbar ){
-			$(".chat .content").mCustomScrollbar();
+			$(".chat .content").mCustomScrollbar({
+        advanced: {
+          updateOnContentResize: true
+        }
+      });
 		}
   });
 
@@ -12,9 +16,147 @@
 
     $('.replay_list .pager').ajaxView();
 
+    
+    if( $.chatPlayerSelect ) {
+      $('.chat .content li').chatPlayerSelect();
+    }
+
+    if( $.chatFilters ) {
+      $('.filter').chatFilters();
+    }
+
 	});
 
 //plugin
+
+$.chatFilters = function( element , options ) {
+  
+  var settings = {};
+  element.data('chatFilters' , this);
+  var obj = this;
+  var items , showAll;
+
+  this.init = function( options ) {
+    settings = $.extend( {} , $.chatFilters.defaultOptions , options );
+    
+    this._setup();
+    this._atachEvent();
+    
+  };
+  
+  this._setup = function() {
+    items = element.find( '.team ' + settings.items );
+    showAll = element.find('.show-all');
+    target = $(settings.target);
+
+    showAll.prop({ 'checked':true , 'disabled':'true' });
+    items.prop( 'checked', false )
+
+  };
+
+  this._atachEvent = function() {
+    
+    showAll.on('change' , function() {
+      if( this.checked ) {
+        items.prop('checked' , false);
+        target.show();
+        $(this).prop('disabled', true );
+      }
+
+    });
+
+    items.on('change' , function() {
+
+      var cl = ".player-" + $(this).val();
+
+      if( this.checked ) {
+        if( showAll.is(':checked') ) {
+          showAll.prop({ 'checked':false , 'disabled': false });
+          target.hide();
+        }
+        target.parent().find( cl ).show();
+      } else {
+        
+        if( items.is(':checked') ) {
+          target.parent().find( cl ).hide();
+        } else {
+          target.show();
+          showAll.prop({ 'checked': true , 'disabled': true });
+        }
+
+      }
+      
+    });
+
+  };
+
+  this.init( options );
+};
+
+
+$.chatFilters.defaultOptions = {
+  items: '.form-checkbox',
+  target: '.chat .content li'
+}
+
+
+$.fn.chatFilters = function(options) {
+  return this.each(function() {
+    (new $.chatFilters($(this), options));
+  });        
+};
+
+$.chatPlayerSelect = function( element , options ) {
+  
+  var settings = {};
+  element.data('chatPlayerSelect' , this);
+  var storage = false;
+  var activeClass = "jsSelected";
+  obj = this;
+
+  this.init = function( options ) {
+    
+    this._atachEvent();
+      
+  };
+
+  this._atachEvent = function() {
+    element.on('click',function(){
+      
+      if( $(this).hasClass(activeClass)) {
+        obj._removeClass();
+      } else {
+        obj._addClass( $(this) );  
+      }
+      
+    });
+  };
+  
+  this._removeClass = function() {
+    storage.removeClass(activeClass);
+  }
+
+  this._addClass = function(el) {
+    
+    if( storage != false ) {
+      storage.removeClass( activeClass );
+    }
+
+    var tmpClass = "." + el.attr('class');
+    storage = element.parent().children(tmpClass);
+    storage.addClass( activeClass );
+
+  };
+
+  this.init( options );
+};
+
+$.fn.chatPlayerSelect = function(options) {
+  return this.each(function() {
+    (new $.chatPlayerSelect($(this), options));
+  });        
+};
+
 
 $.heroExpand = function( element ) {
 	

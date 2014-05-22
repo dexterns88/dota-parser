@@ -13,6 +13,16 @@ class Panel extends MY_AdminController {
 
   public function index()
   {
+    if( $this->user->validate_session() )
+    {
+      $menu['type'] = 'submenu';
+      $menu['item'] = array(
+        'Add news' => '/panel/addnews',
+        'delete news' => '/panel/newsdelete'
+      );
+      $this->data['submenu'] = $this->twig->render('panel/admin_menu' , $menu);
+    }
+
     $this->twig->display('main_tpl' , $this->data );
   }
 
@@ -30,26 +40,30 @@ class Panel extends MY_AdminController {
 
       $field = array();
 
-      if ($this->form_validation->run() == FALSE)
+      if(isset($_POST['create']))
       {
-        $this->data['message'] = "<div class='error message'>" . validation_errors() . "</div>";
-        $field['title'] = set_value('title');
-        $field['newstext'] = set_value('newstext');
-      }
-      else
-      {
-        $time = time();
-        $POST = $_POST;
-        $query = $this->news_modal->create( $POST['title'] , $POST['newstext'] , $time );
-        if ( $query )
+        if ($this->form_validation->run() == FALSE)
         {
-          $this->data['message'] = "<div class='message status'>News successfully created!</div>";
+          $this->data['message'] = writeMessage( validation_errors() , 'error');
+          $field['title'] = set_value('title');
+          $field['newstext'] = set_value('newstext');
         }
         else
         {
-          $this->data['message'] = "<div class='message error'>Something wrong please trt again or contact system administrator</div>";
+          $time = time();
+          $POST = $_POST;
+          $query = $this->news_modal->create( $POST['title'] , $POST['newstext'] , $time );
+          if ( $query )
+          {
+            $this->data['message'] = writeMessage( "News successfully created!" , "status");
+          }
+          else
+          {
+            $this->data['message'] = writeMessage("Something wrong please trt again or contact system administrator" , "error");
+          }
         }
-      }
+      } // end if posted
+
       $this->data['content'] = $this->twig->render('panel/create_news' , $field);
     }
     else
@@ -96,7 +110,7 @@ class Panel extends MY_AdminController {
     $id = intval($id);
 
     if( $id == 0 ){
-      $this->data['message'] = "<div class='error message'>undefined news id</div>";
+      $this->data['message'] = writeMessage( "undefined news id" , "status");
       $this->index();
       return false;
     }
@@ -107,11 +121,11 @@ class Panel extends MY_AdminController {
       $q = $this->news_modal->delete($id);
       if($q)
       {
-        $this->data['message'] = "<div class='status message'>News successfully deleted</div>";
+        $this->data['message'] = writeMessage("News successfully deleted","status");
       }
       else
       {
-        $this->data['message'] = "<div class='error message'>Something wrong please try again</div>";
+        $this->data['message'] = writeMessage("Something wrong please try again" , "error");
       }
     }
     else
@@ -126,6 +140,32 @@ class Panel extends MY_AdminController {
   public function logout()
   {
     $this->user->destroy_user('/');
+  }
+
+  public function login()
+  {
+      if( $this->user->validate_session() ) {
+        redirect('/panel');
+      }
+
+      $tmpData['url'] = "/" . uri_string();
+      $this->data['pagetitle'] = 'Login to panel';
+      if( isset($_POST['login'] ) || isset($_POST['enter']) )
+      {
+        $this->username = encode_php_tags($_POST['username']);
+        $this->password = encode_php_tags($_POST['pass']);
+        $this->user->login( $this->username , $this->password );
+        redirect( $tmpData['url'] );
+
+      }
+
+      if( $this->session->flashdata('error_message') )
+      {
+        $this->data['message'] = "<div class='message error'>" . $this->session->flashdata('error_message')."</div>";
+      }
+
+      $this->data['content'] = $this->twig->render('panel/login_form' , $tmpData );
+      $this->index();
   }
 
   private function pagerConf( $page )

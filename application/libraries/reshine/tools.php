@@ -19,7 +19,10 @@ define("MAPS_FOLDER", "maps");
 
 //define("DEFAULT_XML_MAP", "dota.allstars.v6.72.xml");
 //define("DEFAULT_XML_MAP", "dota.allstars.v6.74.xml");
-define("DEFAULT_XML_MAP", "dota.allstars.v6.75.xml");
+
+if (!defined('DEFAULT_XML_MAP')) {
+  define("DEFAULT_XML_MAP", "dota.allstars.v6.75.xml");
+}
 
 
 

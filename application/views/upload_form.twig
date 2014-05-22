@@ -20,6 +20,16 @@
     <textarea class="form-textarea" name="replay_text" id="replay_text" cols="65"></textarea>
   </div> <!-- form-item -->
 
+  <div class="form-item">
+    <label for="parser_type">Select parser engine:</label>
+    <select class="form-select" name="replay_parser" id="parser_type">
+      {% for key , maps in parsers %}
+        <option value="{{ maps }}">{{ maps }} {% if key == 0 %} (recommended) {% endif %}</option>
+      {% endfor %}
+    </select>
+    <p class="description">If you have problem with upload please try to use another engine</p>
+  </div>
+
   <div class="form-item form-file">
     <label for="replay_file" >File<span class="required-astrix">*</span>: </label>
     <input name="replay_file" id="replay_file" type="file" />

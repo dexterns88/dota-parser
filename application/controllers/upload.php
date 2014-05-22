@@ -11,14 +11,17 @@ class Upload extends MY_Controller {
     $this->data['keywords'] = ',upload dota replay';
     $this->data['title'] = 'Upload / w3xSilverCloud';
 
+    $this->data['parsers'] = $this->config->item('parser');
+
     $this->data['content'] = $this->twig->render('upload_form' , $this->data );
     $this->twig->display('main_tpl' , $this->data );
   }
 
   public function proced()
   {
-
     $this->load->model('save_replay');
+    $mapXml = $_POST['replay_parser'];
+    define("DEFAULT_XML_MAP", $mapXml );
 
     $this->load->helper( array( 'file' , 'date' ) );
     $time = time();
@@ -37,12 +40,12 @@ class Upload extends MY_Controller {
 
     if ( ! $this->upload->do_upload('replay_file') )
     {
-      $this->data['message'] = "<div class='message error'>" . $this->upload->display_errors() . "</div>";
+      $this->data['message'] = writeMessage( $this->upload->display_errors() , "error" );
       $this->index();
     }
     else if( empty( $postData['replay_title'] ) )
     {
-      $this->data['message'] = "<div class='message error'>Title is required</div>";
+      $this->data['message'] = writeMessage("Title is required" , "error");
       $this->index();
     }
     else
@@ -95,7 +98,7 @@ class Upload extends MY_Controller {
           $res_error = reshine_error;
         }
 
-        $this->data['message'] = "<div class='message error'>Error with uploading replay please contact us to report issues <br/> {$res_error} </div>";
+        $this->data['message'] = writeMessage("Error with uploading replay please contact us to report issues <br/> {$res_error}" , "error");
 
         $this->index();
       }
@@ -103,7 +106,7 @@ class Upload extends MY_Controller {
       {
         $links = "/view/save/" . $uploaded_file['raw_name'];
         if ( $this->reshine->extra['parsed'] == true ) {
-          $this->data['message'] = "Replay uploaded successfully. <a href='{$links}' > View details </a>";
+          $this->data['message'] = writeMessage("Replay uploaded successfully. <a href='{$links}' > View details </a>" , "status");
           $this->data['reply'] = $this->reshine;
           $this->data['content'] = $this->twig->render('success_uploaded' , $this->data );
           $this->twig->display('main_tpl' , $this->data );
