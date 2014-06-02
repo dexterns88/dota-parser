@@ -1,0 +1,24 @@
+{% import "macro/macro_form.twig" as forms %}
+<h1>Edit password</h1>
+
+<form action="{{ url }}dashboard/editpasword" method="post">
+
+{%
+  set param = {
+    labelBefore: 'New password:',
+    placeholder: 'Enter new password'
+  }
+%}
+{{ forms.input('newpass', 'password', param) }}
+
+{%
+  set param = {
+    labelBefore: 'Retype new password:',
+    placeholder: 'Enter new password again'
+  }
+%}
+{{ forms.input('renewpass', 'password', param) }}
+
+{{ forms.submit('update_pass', 'submit', 'update password', 'form-action', 'form-submit') }}
+
+</form>

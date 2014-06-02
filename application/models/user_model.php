@@ -39,4 +39,14 @@ class User_model extends Ci_Model {
 
   }
 
+  function updateProfile( $name, $email, $id )
+  {
+    $esName = $this->db->escape($name);
+    $esMail = $this->db->escape($email);
+
+    $sql = "UPDATE users SET name= {$esName} , email= {$esMail} WHERE id={$id}";
+    $query = $this->db->query($sql);
+    return $query;
+  }
+
 }

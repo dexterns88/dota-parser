@@ -93,8 +93,10 @@ class MY_AdminController extends MY_Controller {
       array_push( $this->data['jsplugin'] , "/script/ck/ckeditor.js" , "/script/ck/adapters/jquery.js" ,  "/script/ckbuild.js" );
 
       $this->data['user'] = array(
-        'username'=> $this->user->get_login(),
-        'id' => $this->user->get_id(),
+        'user' => $this->user->get_login(),
+        'uid' => $this->user->get_id(),
+        'name' => $this->user->get_name(),
+        'email' => $this->user->get_email(),
         'image' => $this->user->get_custom_field('image')
       );
 

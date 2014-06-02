@@ -1,0 +1,13 @@
+<div class="user-profile">
+  <div class="user-image">
+    <img src="/files/user/{{ user.image }}" width="110" alt="user {{ user.name }}" />
+  </div> <!-- user-image -->
+
+  <div class="user-info">
+    <p>{{ user.user }}</p>
+    <p>{{ user.name }}</p>
+    <p>{{ user.email }}</p>
+  </div><!-- user-info -->
+
+  <a class="edit" href="/dashboard/editprofile/">edit user</a>
+</div>
