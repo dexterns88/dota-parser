@@ -41,8 +41,8 @@
 $route['(:any)'] = 'downtime';
 $route['default_controller'] = 'downtime';
 
-$route['default_controller'] = "welcome";
-$route['404_override'] = 'page404';
+//$route['default_controller'] = "welcome";
+//$route['404_override'] = 'page404';
 
 
 /* End of file routes.php */
