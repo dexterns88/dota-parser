@@ -433,11 +433,36 @@
 	@include box-sizing(border-box);
 }
 
-
+body.downtime,
 body.page404 {
 	.hero-search {
 		text-align: center;
 	}
+}
+
+body.downtime {
+  text-align: center;
+
+  h2 {
+    text-align: center;
+  }
+
+  .hero-search {
+    display: inline-block;
+    position: relative;
+  }
+
+  .region-content {
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .logo {
+    position: absolute;
+    top: 40px;
+    left: 0;
+  }
+
 }
 
 .user-info {
