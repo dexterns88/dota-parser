@@ -241,11 +241,14 @@ $.ajaxView = function( element ) {
       } else {
         page = page[3];  
       }
-      var url = "/view/ajax/" + page;
-      
+      var url = "/view/ajax/" + page,
+          siteUrl = "/view/page/" + page;
+
       $(".replay_list" ).load( url ,  { 'type':'ajax' } , function(){
         obj.init();
       });
+
+      history.pushState('data', '', siteUrl);
 
     });
     

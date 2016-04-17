@@ -5,7 +5,7 @@ class View extends MY_Controller {
 
   var $query , $file , $replayConf , $replay;
 
-  private $itemsPager = 20;
+  private $itemsPager = 50;
 
   public function index()
   {
@@ -113,6 +113,7 @@ class View extends MY_Controller {
     $config['base_url'] = '/view/page';
     $config['total_rows'] = $page; //100;
     $config['per_page'] = $this->itemsPager;
+    $config['num_links'] = 10;
     $config['full_tag_open'] ="<ul class='pager'>";
     $config['full_tag_close'] ="</ul>";
     $config['num_tag_open'] = '<li>';
