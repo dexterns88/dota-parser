@@ -5,6 +5,20 @@ body {
 	font-style: 14px;
 }
 
+.donation-wrapper {
+	text-align: right;
+
+	input,
+	img {
+		vertical-align: middle;
+	}
+
+	span {
+		vertical-align: middle;
+		color: #fff;
+	}
+}
+
 a {
 	color: #AFC7CD;
 }
@@ -26,6 +40,11 @@ header {
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 30px;
+}
+
+.page-holder {
+	max-width: 1024px;
+	margin: 0 auto 15px;
 }
 
 .page {
